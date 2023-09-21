@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] private float jumpHeight = 50f;
+    [SerializeField] private float jumpForce = 50f;
 
     [Range(0, 1)] [SerializeField] private float crouchSpeed = 0.5f;
 
@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private Collider2D crouchDisableCollider;
 
     const float groundedRadius = .2f;
-    private bool grounded;
+    public bool grounded;
     const float cellingRadius = .2f;
     private Rigidbody2D rigidbody2D;
     private bool facingRight = true;
@@ -122,7 +122,7 @@ public class CharacterController : MonoBehaviour
         if (grounded && jump)
         {
             grounded = false;
-            rigidbody2D.AddForce(new Vector2(0f, jumpHeight));
+            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
         }
     }
 
