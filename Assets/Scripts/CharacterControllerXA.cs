@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterController : MonoBehaviour
+public class CharacterControllerXA : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 50f;
 
@@ -20,8 +20,11 @@ public class CharacterController : MonoBehaviour
 
     const float groundedRadius = .2f;
     public bool grounded;
+    public bool fastFall;
+    public float fastFallSpeed = 6.0f;
+    public float fallSpeed = 1.0f;
     const float cellingRadius = .2f;
-    private Rigidbody2D rigidbody2D;
+    public Rigidbody2D rb2D;
     private bool facingRight = true;
     private Vector3 velocity = Vector3.zero;
 
@@ -34,11 +37,12 @@ public class CharacterController : MonoBehaviour
     public class BoolEvent : UnityEvent<bool> {}
 
     public BoolEvent OnCrouchEvent;
+    public bool crouching;
     private bool wasCrouching = false;
 
     private void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb2D = GetComponent<Rigidbody2D>();
 
         if (OnLandEvent == null)
         {
@@ -76,13 +80,37 @@ public class CharacterController : MonoBehaviour
         {
             if (Physics2D.OverlapCircle(celingCheck.position, cellingRadius, whatIsGround))
             {
-                crouch = true;
+                crouching = true;
             }
+            if (grounded)
+            {
+                crouching = true;
+                fastFall = false;
+            }
+            else
+            {
+                crouching = false;
+                fastFall = true;
+            }
+        }
+        else
+        {
+            crouching = false;
+            fastFall = false;
+        }
+
+        if(fastFall)
+        {
+            rb2D.gravityScale = fastFallSpeed;
+        }
+        else
+        {
+            rb2D.gravityScale = fallSpeed;
         }
         
         if (grounded || airControl)
         {
-            if (crouch)
+            if (crouching)
             {
                 if (!wasCrouching)
                 {
@@ -104,25 +132,25 @@ public class CharacterController : MonoBehaviour
                 }
             }
 
-            Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
+            Vector3 targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
 
-            rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing);
+            rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-            if (move > 0 && !facingRight)
-            {
-                Flip();
-            }
+            // if (move > 0 && !facingRight)
+            // {
+            //     Flip();
+            // }
 
-            else if (move < 0 && facingRight)
-            {
-                Flip();
-            }
+            // else if (move < 0 && facingRight)
+            // {
+            //     Flip();
+            // }
         }
 
         if (grounded && jump)
         {
             grounded = false;
-            rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+            rb2D.AddForce(new Vector2(0f, jumpForce));
         }
     }
 

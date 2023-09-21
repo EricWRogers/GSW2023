@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.Events;
 using SuperPupSystems.GamePlay2D;
 
-public class CharacterMovement : CharacterController
+public class CharacterMovement : CharacterControllerXA
 {
-        public CharacterController controller;
+        public CharacterControllerXA controller;
         public float speed = 10.0f;
         public float collisionTestOffset;
 
         float horizontalMove = 0.0f;
-        bool crouch;
+        public bool crouch;
         bool jump;
 
         public SpriteRenderer spriteRenderer;
@@ -27,12 +27,12 @@ public class CharacterMovement : CharacterController
         void Update()
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") >= 0.5f )
             {
                 jump = true;
             }
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetAxisRaw("Vertical") <= -0.5f)
             {
                 crouch = true;
             }

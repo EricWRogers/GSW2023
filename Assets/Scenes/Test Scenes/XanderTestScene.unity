@@ -623,15 +623,21 @@ MonoBehaviour:
   celingCheck: {fileID: 2039544377}
   crouchDisableCollider: {fileID: 2039544378}
   grounded: 0
+  fastFall: 0
+  fastFallSpeed: 6
+  fallSpeed: 1
+  rb2D: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  crouching: 0
   controller: {fileID: 2039544381}
-  speed: 100
+  speed: 50
   collisionTestOffset: 0
+  crouch: 0
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &2039544381
@@ -657,12 +663,17 @@ MonoBehaviour:
   celingCheck: {fileID: 2039544377}
   crouchDisableCollider: {fileID: 2039544378}
   grounded: 0
+  fastFall: 0
+  fastFallSpeed: 6
+  fallSpeed: 1
+  rb2D: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
+  crouching: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
