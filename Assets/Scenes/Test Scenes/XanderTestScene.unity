@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b01305f96490f48b2987b378b44667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 50
+  jumpForce: 5
   crouchSpeed: 0.5
   movementSmoothing: 0.05
   airControl: 1
@@ -652,8 +652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4b051cf5bd72542b38ebe272032ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 400
-  crouchSpeed: 0.5
+  jumpForce: 5
+  crouchSpeed: 0.45524517
   movementSmoothing: 0.05
   airControl: 1
   whatIsGround:

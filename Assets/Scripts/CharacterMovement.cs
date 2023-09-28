@@ -27,9 +27,10 @@ public class CharacterMovement : CharacterControllerXA
         void Update()
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
-            if (Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") >= 0.5f )
+            if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.UpArrow) )
             {
                 jump = true;
+
             }
 
             if (Input.GetAxisRaw("Vertical") <= -0.5f)
