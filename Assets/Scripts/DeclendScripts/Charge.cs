@@ -8,28 +8,34 @@ public class Charge : MonoBehaviour
     public float charge;
     public float startCR = 0.0f;
     public float chargeRate;
-    public bool isCharging;
+    public float delay = 2.0f;
     float tempTime;
     private SpriteRenderer sprite;
     Color playerColor;
     
+    void SetCharge(float _value)
+    {
+        charge = Mathf.Clamp(_value, 0, 100);
+    }
 
     void Start(){
-        charge = startCharge;
+        SetCharge(startCharge);
         chargeRate = startCR; 
-        isCharging = false;
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    void crouchCharge(){
+    
+
+    void CrouchCharge(){
         //Calls function every decimal value of a second
-            if(tempTime > 0.1){
-                tempTime = 0;
-                charge += chargeRate;
+
+        if(tempTime > 0.1){
+            tempTime = 0;
+            SetCharge(charge + chargeRate);
                 //When Arrow Down is held Charge Rate is activated as long as charge is less than 100
-                if(Input.GetKey(KeyCode.DownArrow) && charge < 100.0f){
+            if(Input.GetKey(KeyCode.DownArrow) && charge < 100.0f ){
                 chargeRate = 1.0f;
-                }
+            }
             else{
                 chargeRate = 0.0f;
             }
@@ -38,8 +44,8 @@ public class Charge : MonoBehaviour
 
     void chargeBurst(){
         float burst = 25.0f;
-        if(Input.GetKeyDown(KeyCode.Space) && burst <= (0+charge)){
-            charge -= burst; 
+        if(Input.GetKeyDown(KeyCode.Space) && charge > 0){
+            SetCharge(charge - burst); 
             
         }
         
@@ -47,11 +53,8 @@ public class Charge : MonoBehaviour
 
     void chargeBump(){
         float bump = 10.0f;
-        if(Input.GetKeyDown(KeyCode.Z) && bump < (100.0f-charge)){
-            charge += bump;
-        }
-        if(Input.GetKeyDown(KeyCode.Z) &&89.9f < charge && charge < 100.0f){
-            charge = 100.0f;
+        if(Input.GetKeyDown(KeyCode.Z)){
+            SetCharge(charge + bump);
         }
     }
     
@@ -59,7 +62,7 @@ public class Charge : MonoBehaviour
     void Update(){
         tempTime +=Time.deltaTime;
         
-        crouchCharge();
+        Invoke("CrouchCharge", 3.0f);
         chargeBurst();
         chargeBump();
         sprite.color = new Color(1.0f, ((100-charge)/100), ((100-charge)/100), 1.0f);
