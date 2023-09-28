@@ -9,6 +9,7 @@ public class CharacterMovement : CharacterControllerXA
         public CharacterControllerXA controller;
         public float speed = 10.0f;
         public float collisionTestOffset;
+        public string playerNum;
 
         float horizontalMove = 0.0f;
         public bool crouch;
@@ -26,13 +27,14 @@ public class CharacterMovement : CharacterControllerXA
 
         void Update()
         {
-            horizontalMove = Input.GetAxisRaw("Horizontal") * speed;
-            if (Input.GetButtonDown("Jump") || Input.GetAxisRaw("Vertical") >= 0.5f )
+            horizontalMove = Input.GetAxisRaw(playerNum+" Horizontal") * speed;
+            if (Input.GetButtonDown(playerNum+" Jump"))
             {
                 jump = true;
+
             }
 
-            if (Input.GetAxisRaw("Vertical") <= -0.5f)
+            if (Input.GetAxisRaw(playerNum+" Vertical") <= -0.5f)
             {
                 crouch = true;
             }
