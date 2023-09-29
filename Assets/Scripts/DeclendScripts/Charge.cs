@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Charge : MonoBehaviour
 {
@@ -12,10 +13,12 @@ public class Charge : MonoBehaviour
     float tempTime;
     private SpriteRenderer sprite;
     Color playerColor;
+    public Slider slider;
     
     void SetCharge(float _value)
     {
         charge = Mathf.Clamp(_value, 0, 100);
+        slider.value = _value;
     }
 
     void Start(){
