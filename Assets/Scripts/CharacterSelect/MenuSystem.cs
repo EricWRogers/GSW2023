@@ -8,7 +8,11 @@ public class MenuSystem : MonoBehaviour
     public bool isReady = false;
     public Animator player1Animator;
     public Animator player2Animator;
+    public Animator FadeOutAnimator;
+    public Animator ConfirmBlinkAnimator;
     public GameObject confirmBox;
+
+    public string nextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +24,14 @@ public class MenuSystem : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && isReady)
         {
-            SceneManager.LoadScene("Test Scene 2"); //name something else
+            ConfirmBlinkAnimator.SetTrigger("ConfirmTrigger");
+            FadeOutAnimator.SetTrigger("FadeOutTrigger");
+
         } 
+        if(isReady && (FadeOutAnimator.GetCurrentAnimatorStateInfo(0).IsName("BlackCanvasAnim")))
+        {
+            SceneManager.LoadScene(nextScene);
+        }
         if (isReady){confirmBox.SetActive(true);}
         if (!isReady){confirmBox.SetActive(false);}
 
