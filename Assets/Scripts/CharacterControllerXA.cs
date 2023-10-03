@@ -27,6 +27,7 @@ public class CharacterControllerXA : MonoBehaviour
     public Rigidbody2D rb2D;
     private bool facingRight = true;
     private Vector3 velocity = Vector3.zero;
+    private Vector2 motion = Vector2.zero;
 
     [Header("Events")]
     [Space]
@@ -149,8 +150,10 @@ public class CharacterControllerXA : MonoBehaviour
 
         if (grounded && jump)
         {
+            motion = rb2D.velocity;
             grounded = false;
-            rb2D.AddForce(new Vector2(0f, jumpForce));
+            motion.y = jumpForce;
+            rb2D.velocity = motion;
         }
     }
 
