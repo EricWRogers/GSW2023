@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SuperPupSystems.Helper;
 
 public class Charge : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Charge : MonoBehaviour
     private SpriteRenderer sprite;
     Color playerColor;
     public Slider slider;
+    public Timer timer;
+    bool delayFinish = false;
     
     void SetCharge(float _value)
     {
@@ -27,11 +30,17 @@ public class Charge : MonoBehaviour
         sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    
+    public void DelayOver(){
+        delayFinish = true;
+    }
 
-    void CrouchCharge(){
+    public void CrouchCharge(){
         //Calls function every decimal value of a second
 
+        if(delayFinish == false){
+            return;
+        }
+        
         if(tempTime > 0.1){
             tempTime = 0;
             SetCharge(charge + chargeRate);
@@ -41,6 +50,7 @@ public class Charge : MonoBehaviour
             }
             else{
                 chargeRate = 0.0f;
+                delayFinish = false;
             }
         }
     }   
@@ -65,7 +75,13 @@ public class Charge : MonoBehaviour
     void Update(){
         tempTime +=Time.deltaTime;
         
-        Invoke("CrouchCharge", 3.0f);
+        if(Input.GetKeyDown(KeyCode.DownArrow)){
+            timer.StartTimer();
+
+        }
+        CrouchCharge();
+        //Invoke("CrouchCharge", 3.0f);
+        
         chargeBurst();
         chargeBump();
         sprite.color = new Color(1.0f, ((100-charge)/100), ((100-charge)/100), 1.0f);
