@@ -6,6 +6,7 @@ using SuperPupSystems.Helper;
 
 public class Charge : MonoBehaviour
 {
+    public CharacterControllerXA characterControllerXA;
     public float startCharge = 50.0f; 
     public float charge;
     public float startCR = 0.0f;
@@ -45,7 +46,7 @@ public class Charge : MonoBehaviour
             tempTime = 0;
             SetCharge(charge + chargeRate);
                 //When Arrow Down is held Charge Rate is activated as long as charge is less than 100
-            if(Input.GetKey(KeyCode.DownArrow) && charge < 100.0f ){
+            if(characterControllerXA.crouching && charge < 100.0f ){
                 chargeRate = 1.0f;
             }
             else{
