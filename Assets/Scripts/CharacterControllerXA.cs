@@ -16,7 +16,7 @@ public class CharacterControllerXA : MonoBehaviour
 
     [SerializeField] private Transform celingCheck;
 
-    [SerializeField] private Collider2D crouchDisableCollider;
+    //[SerializeField] private Collider2D crouchDisableCollider;
 
     const float groundedRadius = .2f;
     public bool grounded;
@@ -122,10 +122,10 @@ public class CharacterControllerXA : MonoBehaviour
                 }
 
 
-                if(crouchDisableCollider != null)
-                {
-                    crouchDisableCollider.enabled = true;
-                }
+                //if(crouchDisableCollider != null)
+                //{
+                //    crouchDisableCollider.enabled = true;
+                //}
 
                 if (wasCrouching)
                 {
