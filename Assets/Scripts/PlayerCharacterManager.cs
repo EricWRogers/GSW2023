@@ -43,7 +43,10 @@ public class PlayerCharacterManager : MonoBehaviour
             }
             if (spriteRenderer2 != null)
             {
-                spriteRenderer2.color = cloneColor;
+                if (GlobalVariables.instance.Player2Selection == GlobalVariables.instance.Player1Selection) //requires global variable in scene
+                {
+                    spriteRenderer2.color = cloneColor;
+                }
             }
         }
 
