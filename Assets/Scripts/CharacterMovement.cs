@@ -102,6 +102,11 @@ public class CharacterMovement : CharacterControllerXA
 
         void FixedUpdate()
         {
+            if (Input.GetAxisRaw(playerNum+" Vertical") <= -0.5f)
+            {
+                crouch = true;
+            }
+            
             controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, punch, kick, block);
             jump = false;
             crouch = false;
