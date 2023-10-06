@@ -27,7 +27,7 @@ public class HealthBar : MonoBehaviour
        
     }
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         currentHealth = Mathf.Clamp((currentHealth - damage),0,maxHealth);
 
@@ -38,13 +38,18 @@ public class HealthBar : MonoBehaviour
         sliderfill.color = Color.HSVToRGB(colorHue,1,1);
 
     }
-       
+
+    private void Start()
+    {
+        SetMaxHealth(maxHealth);
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-            Debug.Log("take damge");
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+       // {
+            //TakeDamage(20);
+           // Debug.Log("take damge");
+        //}
     }
 }
