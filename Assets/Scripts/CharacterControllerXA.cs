@@ -16,7 +16,7 @@ public class CharacterControllerXA : MonoBehaviour
 
     [SerializeField] private Transform celingCheck;
 
-    [SerializeField] private Collider2D crouchDisableCollider;
+    //[SerializeField] private Collider2D crouchDisableCollider;
 
     const float groundedRadius = .2f;
     public bool grounded;
@@ -28,6 +28,7 @@ public class CharacterControllerXA : MonoBehaviour
     private bool facingRight = true;
     private Vector3 velocity = Vector3.zero;
     private Vector2 motion = Vector2.zero;
+    public Animator animator;
 
     [Header("Events")]
     [Space]
@@ -44,6 +45,7 @@ public class CharacterControllerXA : MonoBehaviour
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        //animator = GetComponent<Animator>(); 
 
         if (OnLandEvent == null)
         {
@@ -75,7 +77,7 @@ public class CharacterControllerXA : MonoBehaviour
         }
     }
 
-    public void Move(float move, bool crouch, bool jump)
+    public void Move(float move, bool crouch, bool jump, bool punch, bool kick, bool block)
     {
         if (crouch)
         {
@@ -119,18 +121,32 @@ public class CharacterControllerXA : MonoBehaviour
                     OnCrouchEvent.Invoke(true);
                 }
 
-                move *= crouchSpeed;
 
-                if(crouchDisableCollider != null)
-                {
-                    crouchDisableCollider.enabled = true;
-                }
+                //if(crouchDisableCollider != null)
+                //{
+                //    crouchDisableCollider.enabled = true;
+                //}
 
                 if (wasCrouching)
                 {
                     wasCrouching = false;
                     OnCrouchEvent.Invoke(false);
                 }
+            }
+
+            if(crouching || ((kick || punch) && grounded))
+            {
+                move *= crouchSpeed;
+            }
+
+            if(!grounded)
+            {
+                block = false;
+            }
+
+            if (block)
+            {
+               move = 0;
             }
 
             Vector3 targetVelocity = new Vector2(move * 10f, rb2D.velocity.y);
@@ -154,6 +170,18 @@ public class CharacterControllerXA : MonoBehaviour
             grounded = false;
             motion.y = jumpForce;
             rb2D.velocity = motion;
+        }
+
+        motion = rb2D.velocity;
+        if(animator != null)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(motion.x));
+            //animator.SetFloat("Speedy", Abs(motion.y));
+            animator.SetBool("Grounded", grounded);
+            animator.SetBool("Crouching", crouching);
+            animator.SetBool("Punch", punch);
+            animator.SetBool("Kick", kick);
+            animator.SetBool("Block", block);
         }
     }
 
