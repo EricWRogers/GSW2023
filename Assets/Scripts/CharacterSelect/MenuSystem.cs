@@ -12,7 +12,7 @@ public class MenuSystem : MonoBehaviour
     public Animator ConfirmBlinkAnimator;
     public GameObject confirmBox;
 
-    public string nextScene;
+    public string White_Box;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class MenuSystem : MonoBehaviour
         } 
         if(isReady && (FadeOutAnimator.GetCurrentAnimatorStateInfo(0).IsName("BlackCanvasAnim")))
         {
-            SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene("White_Box");
         }
         if (isReady){confirmBox.SetActive(true);}
         if (!isReady){confirmBox.SetActive(false);}
