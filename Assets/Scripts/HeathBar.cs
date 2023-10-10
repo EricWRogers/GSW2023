@@ -48,6 +48,8 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         SetMaxHealth(maxHealth);
+        colorHue = ((currentHealth / 100) / 3) ; 
+        sliderfill.color = Color.HSVToRGB(colorHue,1,1);
     }
 
 
