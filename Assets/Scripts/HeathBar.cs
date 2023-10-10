@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -36,13 +38,19 @@ public class HealthBar : MonoBehaviour
         colorHue = ((currentHealth / 100) / 3) ; 
 
         sliderfill.color = Color.HSVToRGB(colorHue,1,1);
-
+        if (currentHealth == 0.0f)
+        {
+            Debug.Log("Dead");
+            SceneManager.LoadSceneAsync("XanderTestScene");
+        }
     }
 
     private void Start()
     {
         SetMaxHealth(maxHealth);
     }
+
+
 
     void Update()
     {

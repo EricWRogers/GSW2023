@@ -396,7 +396,7 @@ MonoBehaviour:
   playerHealth: {fileID: 1412629586}
   targetPlayer: {fileID: 1412629580}
   hitCollider: {fileID: 633233266}
-  damageNumber: 2
+  damageNumber: 8
 --- !u!1 &650048837
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ Transform:
   m_GameObject: {fileID: 658266260}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 11.96, y: -3.91, z: 0}
+  m_LocalPosition: {x: 11.71, y: -3.91, z: 0}
   m_LocalScale: {x: 22.489805, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -843,6 +843,7 @@ MonoBehaviour:
   fallSpeed: 1
   rb2D: {fileID: 0}
   animator: {fileID: 1412629585}
+  target: {fileID: 2039544374}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -877,6 +878,7 @@ MonoBehaviour:
   fallSpeed: 1
   rb2D: {fileID: 0}
   animator: {fileID: 0}
+  target: {fileID: 2039544374}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1017,7 +1019,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.16, y: 0, z: 0}
-  m_LocalScale: {x: -5, y: 5, z: 5}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 650048838}
@@ -1227,7 +1229,7 @@ Transform:
   m_GameObject: {fileID: 1599377974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -11.85, y: -3.91, z: 0}
+  m_LocalPosition: {x: -11.67, y: -3.91, z: 0}
   m_LocalScale: {x: 22.489805, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1316,7 +1318,7 @@ MonoBehaviour:
   playerHealth: {fileID: 2039544383}
   targetPlayer: {fileID: 2039544380}
   hitCollider: {fileID: 1704348682}
-  damageNumber: 2
+  damageNumber: 8
 --- !u!1 &1754731452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,6 +1567,7 @@ GameObject:
   - component: {fileID: 2004736805}
   - component: {fileID: 2004736804}
   - component: {fileID: 2004736807}
+  - component: {fileID: 2004736808}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1615,7 +1618,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.3640246
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1690,6 +1693,18 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &2004736808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004736803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7ce53bf1091314da7fa0f958d7f91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2039544374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,6 +1888,7 @@ MonoBehaviour:
   fallSpeed: 1
   rb2D: {fileID: 0}
   animator: {fileID: 2039544382}
+  target: {fileID: 1412629578}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1916,6 +1932,7 @@ MonoBehaviour:
   fallSpeed: 1
   rb2D: {fileID: 0}
   animator: {fileID: 2039544382}
+  target: {fileID: 1412629578}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []

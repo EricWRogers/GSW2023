@@ -29,6 +29,8 @@ public class CharacterControllerXA : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Vector2 motion = Vector2.zero;
     public Animator animator;
+    public GameObject target;
+
 
     [Header("Events")]
     [Space]
@@ -153,15 +155,15 @@ public class CharacterControllerXA : MonoBehaviour
 
             rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-            // if (move > 0 && !facingRight)
-            // {
-            //     Flip();
-            // }
+             if (gameObject.GetComponent<Transform>().position.x < target.GetComponent<Transform>().position.x && !facingRight)
+            {
+                Flip();
+             }
 
-            // else if (move < 0 && facingRight)
-            // {
-            //     Flip();
-            // }
+             else if (gameObject.GetComponent<Transform>().position.x > target.GetComponent<Transform>().position.x && facingRight)
+            {
+                 Flip();
+             }
         }
 
         if (grounded && jump)
