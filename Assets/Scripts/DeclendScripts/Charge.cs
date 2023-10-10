@@ -45,7 +45,7 @@ public class Charge : MonoBehaviour
         if(tempTime > 0.1){
             tempTime = 0;
             SetCharge(charge + chargeRate);
-                //When Arrow Down is held Charge Rate is activated as long as charge is less than 100
+                
             if(characterControllerXA.crouching && charge < 100.0f ){
                 chargeRate = 1.0f;
             }
@@ -76,10 +76,11 @@ public class Charge : MonoBehaviour
     void Update(){
         tempTime +=Time.deltaTime;
         
-        if(Input.GetKeyDown(KeyCode.DownArrow)){
+        if(Input.GetButtonDown(gameObject.GetComponent<CharacterMovement>().playerNum+" Vertical")){
             timer.StartTimer();
 
         }
+        
         CrouchCharge();
         //Invoke("CrouchCharge", 3.0f);
         
