@@ -41,7 +41,7 @@ public class HealthBar : MonoBehaviour
         if (currentHealth == 0.0f)
         {
             Debug.Log("Dead");
-            SceneManager.LoadSceneAsync("XanderTestScene");
+            //SceneManager.LoadSceneAsync("XanderTestScene");
         }
     }
 
