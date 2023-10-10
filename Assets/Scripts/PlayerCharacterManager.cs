@@ -11,6 +11,8 @@ public class PlayerCharacterManager : MonoBehaviour
     public GameObject Player2;
     public SpriteRenderer spriteRenderer2;
 
+     Vector3 chpos;
+
     public Color cloneColor = new Vector4(1,1,1,1);
     void Start()
     {
@@ -54,6 +56,11 @@ public class PlayerCharacterManager : MonoBehaviour
 
     void Update()
     {
+        chpos = transform.position;
+
         
+        chpos.x = Mathf.Clamp(chpos.x, -11.85f, 11.96f);
+
+       transform.position = chpos;
     }
 }
