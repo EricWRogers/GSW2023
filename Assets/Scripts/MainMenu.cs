@@ -8,6 +8,6 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("TestCharacterSelect");
+        SceneManager.LoadSceneAsync("CharacterSelect");
     }
 }

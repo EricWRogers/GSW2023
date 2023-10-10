@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/BryeTestStuff/BryeMenuTest.unity
     guid: ad5d38eec7695124682f17e3080d1efa
   - enabled: 1
+    path: Assets/BryeTestStuff/BryeMenuTest.unity
+    guid: ad5d38eec7695124682f17e3080d1efa
+  - enabled: 1
     path: Assets/Scenes/CharacterSelect.unity
     guid: 0cae034eaeaa0234d97ee2c0272a9c45
   - enabled: 1

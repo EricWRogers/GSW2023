@@ -15,8 +15,11 @@ public class CharacterMovement : CharacterControllerXA
         public bool crouch;
         bool jump;
 
+        public bool punch;
+        public bool kick;
+        public bool block;
+
         public SpriteRenderer spriteRenderer;
-        public Animator animator;
 
         private Rigidbody2D _rb2d;
         
@@ -37,6 +40,21 @@ public class CharacterMovement : CharacterControllerXA
             if (Input.GetAxisRaw(playerNum+" Vertical") <= -0.5f)
             {
                 crouch = true;
+            }
+
+            if (Input.GetButtonDown(playerNum+" Button 1"))
+            {
+                punch = true;
+            }
+
+            if (Input.GetButtonDown(playerNum+" Button 2"))
+            {
+                kick = true;
+            }
+
+            if (Input.GetAxisRaw(playerNum+" Button 3") > 0.1)
+            {
+                block = true;
             }
             // float xInput = Input.GetAxis("Horizontal");
             // // /*isTouchingGround = IsTouchingGround();*/
@@ -84,9 +102,17 @@ public class CharacterMovement : CharacterControllerXA
 
         void FixedUpdate()
         {
-            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+            if (Input.GetAxisRaw(playerNum+" Vertical") <= -0.5f)
+            {
+                crouch = true;
+            }
+            
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump, punch, kick, block);
             jump = false;
             crouch = false;
+            punch = false;
+            kick = false;
+            block = false;
         }
 
 }
