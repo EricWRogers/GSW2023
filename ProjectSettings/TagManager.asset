@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - HurtCollider
   - HitCollider
+  - BlockCollider
   layers:
   - Default
   - TransparentFX
