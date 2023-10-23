@@ -493,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 2116307576}
+  playerCharge: {fileID: 582754342}
   targetPlayer: {fileID: 2116307577}
   hitCollider: {fileID: 165821479}
   damageNumber: 0
@@ -1245,6 +1246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   crouchSpeed: 0
+  airSpeed: 0.25
   movementSmoothing: 0.05
   airControl: 1
   whatIsGround:
@@ -1280,6 +1282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5
   crouchSpeed: 0
+  airSpeed: 0.25
   movementSmoothing: 0.05
   airControl: 1
   whatIsGround:
@@ -1305,6 +1308,7 @@ MonoBehaviour:
   speed: 50
   collisionTestOffset: 0
   playerNum: Player 2
+  playerCharge: {fileID: 582754342}
   crouch: 0
   punch: 0
   kick: 0
@@ -1457,6 +1461,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterControllerXA: {fileID: 582754336}
+  playerDamage: {fileID: 582754334}
+  multiplier: 1
   startCharge: 50
   charge: 0
   startCR: 0
@@ -2010,6 +2016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 582754334}
+  playerCharge: {fileID: 2116307584}
   targetPlayer: {fileID: 582754337}
   hitCollider: {fileID: 1005424222}
   damageNumber: 0
@@ -3618,6 +3625,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_NormalColor.r
       value: 0.49803925
       objectReference: {fileID: 0}
+    - target: {fileID: 4397210196559071149, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2399902
+      objectReference: {fileID: 0}
     - target: {fileID: 4559253101753628540, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3970,6 +3981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5
   crouchSpeed: 0
+  airSpeed: 0.25
   movementSmoothing: 0.05
   airControl: 1
   whatIsGround:
@@ -3995,6 +4007,7 @@ MonoBehaviour:
   speed: 50
   collisionTestOffset: 0
   playerNum: Player 1
+  playerCharge: {fileID: 2116307584}
   crouch: 0
   punch: 0
   kick: 0
@@ -4014,6 +4027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   crouchSpeed: 0
+  airSpeed: 0.25
   movementSmoothing: 0.05
   airControl: 1
   whatIsGround:
@@ -4203,6 +4217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterControllerXA: {fileID: 2116307578}
+  playerDamage: {fileID: 2116307576}
+  multiplier: 1
   startCharge: 50
   charge: 0
   startCR: 0
