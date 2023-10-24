@@ -21,21 +21,20 @@ public class Attacking : MonoBehaviour
     {
         Debug.Log("Hit " + collision.gameObject.name);
         hitCol = collision.gameObject.GetComponentInParent<CharacterMovement>();
-        if(collision.gameObject.CompareTag("HurtCollider"))
+        if (collision.gameObject.CompareTag("HurtCollider"))
         {
             if (hitCol.playerNum == targetPlayer.playerNum)
             {
                 Debug.Log("is Hit");
-                //collision.gameObject.SendMessage("Damaged", damageNumber);
                 playerHealth.TakeDamage(damageNumber);
             }
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

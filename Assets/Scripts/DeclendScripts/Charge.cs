@@ -86,7 +86,10 @@ public class Charge : MonoBehaviour
         
         chargeBurst();
         chargeBump();
-        sprite.color = new Color(1.0f, ((100-charge)/100), ((100-charge)/100), 1.0f);
+        if(chargeRate > 0){
+            sprite.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
+        }
+
     }
 }
 
