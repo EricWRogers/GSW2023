@@ -8,7 +8,7 @@ public class Charge : MonoBehaviour
 {
     public CharacterControllerXA characterControllerXA;
     public HealthBar playerDamage;
-    public float multiplier = 1.0f;
+    public float multiplier = 0.0f;
     public float startCharge = 50.0f;
     public float charge;
     public float startCR = 0.0f;
@@ -75,19 +75,19 @@ public class Charge : MonoBehaviour
 
     public void attackChargeDamage()
     {
-        if (charge > 0 || charge <= 25)
+        if (charge > 0 && charge <= 25)
         {
             multiplier = 0.5f;
         }
-        if (charge >= 26 || charge <= 50)
+        if (charge >= 26 && charge <= 50)
         {
             multiplier = 1f;
         }
-        if (charge >= 51 || charge <= 75)
+        if (charge >= 51 && charge <= 75)
         {
             multiplier = 1.5f;
         }
-        if (charge >= 76 || charge <= 99)
+        if (charge >= 76 && charge <= 99)
         {
             multiplier = 2f;
         }
