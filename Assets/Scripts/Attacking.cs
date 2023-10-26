@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 
@@ -28,9 +29,10 @@ public class Attacking : MonoBehaviour
             if (hitCol.playerNum == targetPlayer.playerNum)
             {
                 Debug.Log("is Hit");
+                Debug.Log(playerCharge.multiplier);
                 playerHealth.TakeDamage(damageNumber * playerCharge.multiplier);
                 Debug.Log("Damage is : " + damageNumber * playerCharge.multiplier);
-               
+                
             }
         }
 
