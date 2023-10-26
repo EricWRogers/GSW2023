@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 7090618195896936013}
   - component: {fileID: 3476297777176141101}
   - component: {fileID: 3125153848270681142}
-  - component: {fileID: 3902192843701390405}
+  - component: {fileID: 8312121754107069881}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -602,7 +602,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3902192843701390405
+--- !u!114 &8312121754107069881
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
