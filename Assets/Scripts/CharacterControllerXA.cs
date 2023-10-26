@@ -8,7 +8,7 @@ public class CharacterControllerXA : MonoBehaviour
     [SerializeField] private float jumpForce = 50f;
 
     [Range(0, 1)] [SerializeField] private float crouchSpeed = 0.5f;
-
+    [Range(0, 1)] [SerializeField] private float airSpeed = 0.25f;
     [Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
     [SerializeField] private bool airControl = true;
     [SerializeField] private LayerMask whatIsGround;
@@ -144,6 +144,7 @@ public class CharacterControllerXA : MonoBehaviour
             if(!grounded)
             {
                 block = false;
+                move *= airSpeed;
             }
 
             if (block)
