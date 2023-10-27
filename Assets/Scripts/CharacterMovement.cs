@@ -45,11 +45,13 @@ public class CharacterMovement : CharacterControllerXA
             if (Input.GetButtonDown(playerNum+" Button 1"))
             {
                 punch = true;
+                playerCharge.charge -= 5.0f;
             }
 
             if (Input.GetButtonDown(playerNum+" Button 2"))
             {
                 kick = true;
+                playerCharge.charge -= 5.0f;
             }
 
             if (Input.GetAxisRaw(playerNum+" Button 3") > 0.1)
