@@ -24,6 +24,8 @@ public class WinningPlayerText : MonoBehaviour
     [SerializeField]
     public RoundManager roundManager;
 
+    public Pips pips;
+
     private void Awake()
     {
         Debug.Log("Turn off WinScreen");
@@ -42,6 +44,7 @@ public class WinningPlayerText : MonoBehaviour
         {
             if (p2Wins >= 2)
             {
+                pips.p2r3.enabled = true;
                 playerOneHealth.SetActive(false);
                 playerTwoHealth.SetActive(false);
                 playerOneProtait.SetActive(false);
@@ -50,6 +53,7 @@ public class WinningPlayerText : MonoBehaviour
                 Time.timeScale = 0.0f;
                 winner.text = "Player 2 Wins ";
                 roundManager.p2Wins = 0;
+                roundManager.p1Wins = 0;
             }
             else
             {
@@ -62,7 +66,7 @@ public class WinningPlayerText : MonoBehaviour
         {
             if (p1Wins >= 2)
             {
-
+                pips.p1r3.enabled = true;
                 playerOneHealth.SetActive(false);
                 playerTwoHealth.SetActive(false);
                 playerOneProtait.SetActive(false);
@@ -70,6 +74,8 @@ public class WinningPlayerText : MonoBehaviour
                 winScreen.SetActive(true);
                 Time.timeScale = 0.0f;
                 winner.text = "Player 1 Wins ";
+                roundManager.p1Wins = 0;
+                roundManager.p2Wins = 0;
             }
             else
             {
