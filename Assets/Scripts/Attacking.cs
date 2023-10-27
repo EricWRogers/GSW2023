@@ -6,13 +6,11 @@ using UnityEngine;
 public class Attacking : MonoBehaviour
 {
     public HealthBar playerHealth;
-    public Charge playerCharge;
     public CharacterMovement targetPlayer;
     private CharacterMovement hitCol;
     public GameObject hitCollider;
 
-    public float damageNumber = 0.0f;
-    //public float chargeDischarge = 0.0f;
+    [SerializeField] private float damageNumber = 0.0f;
 
     void Awake()
     {
@@ -28,9 +26,7 @@ public class Attacking : MonoBehaviour
             if (hitCol.playerNum == targetPlayer.playerNum)
             {
                 Debug.Log("is Hit");
-                playerHealth.TakeDamage(damageNumber * playerCharge.multiplier);
-                Debug.Log("Damage is : " + damageNumber * playerCharge.multiplier);
-               
+                playerHealth.TakeDamage(damageNumber);
             }
         }
 
