@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69cc6de2df2ec14b943ed1800cc2339, type: 3}
   m_Name: RoundManager
   m_EditorClassIdentifier: 
-  p1Wins: 1
+  p1Wins: 0
   p2Wins: 0
