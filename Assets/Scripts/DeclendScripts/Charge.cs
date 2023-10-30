@@ -7,9 +7,7 @@ using SuperPupSystems.Helper;
 public class Charge : MonoBehaviour
 {
     public CharacterControllerXA characterControllerXA;
-    public HealthBar playerDamage;
-    public float multiplier = 0.0f;
-    public float startCharge = 50.0f;
+    public float startCharge = 50.0f; 
     public float charge;
     public float startCR = 0.0f;
     public float chargeRate;
@@ -20,6 +18,7 @@ public class Charge : MonoBehaviour
     public Slider slider;
     public Timer timer;
     bool delayFinish = false;
+    
     void SetCharge(float _value)
     {
         charge = Mathf.Clamp(_value, 0, 100);
@@ -66,36 +65,13 @@ public class Charge : MonoBehaviour
         
     }
 
-    void chargeBump() {
+    void chargeBump(){
         float bump = 10.0f;
-        if (Input.GetKeyDown(KeyCode.Z)) {
+        if(Input.GetKeyDown(KeyCode.Z)){
             SetCharge(charge + bump);
         }
     }
-
-    public void attackChargeDamage()
-    {
-        if (charge > 0 && charge <= 25)
-        {
-            multiplier = 0.5f;
-        }
-        if (charge >= 26 && charge <= 50)
-        {
-            multiplier = 1f;
-        }
-        if (charge >= 51 && charge <= 75)
-        {
-            multiplier = 1.5f;
-        }
-        if (charge >= 76 && charge <= 99)
-        {
-            multiplier = 2f;
-        }
-        if (charge == 100)
-        {
-            multiplier = 3f;
-        }
-    }
+    
 
     void Update(){
         tempTime +=Time.deltaTime;
@@ -104,9 +80,7 @@ public class Charge : MonoBehaviour
             timer.StartTimer();
 
         }
-
-        SetCharge(charge);
-        attackChargeDamage();
+        
         CrouchCharge();
         //Invoke("CrouchCharge", 3.0f);
         
