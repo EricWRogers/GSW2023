@@ -10,7 +10,7 @@ public class CharacterMovement : CharacterControllerXA
         public float speed = 10.0f;
         public float collisionTestOffset;
         public string playerNum;
-
+        public Charge playerCharge;
         float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
