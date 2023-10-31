@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShadow : MonoBehaviour
+public class QuitGame : MonoBehaviour
 {
-    public CharacterControllerXA playerMovement;
-    public GameObject shadow;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +13,10 @@ public class PlayerShadow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerMovement.grounded == true)
+        if(Input.GetKeyDown(KeyCode.Q))
         {
-            shadow.SetActive(true);
-        }else
-        {
-            shadow.SetActive(false);
+            Application.Quit();
+            Debug.Log("Quit Game");
         }
     }
 }

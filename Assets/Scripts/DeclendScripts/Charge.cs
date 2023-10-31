@@ -7,19 +7,19 @@ using SuperPupSystems.Helper;
 public class Charge : MonoBehaviour
 {
     public CharacterControllerXA characterControllerXA;
-    public HealthBar playerDamage;
-    public float multiplier = 0.0f;
-    public float startCharge = 50.0f;
+    public float startCharge = 50.0f; 
     public float charge;
     public float startCR = 0.0f;
     public float chargeRate;
     public float delay = 2.0f;
+    public float chargeMultiplier = 0.0f;
     float tempTime;
     private SpriteRenderer sprite;
-    Color playerColor;
+    //Color playerColor;
     public Slider slider;
     public Timer timer;
     bool delayFinish = false;
+    
     void SetCharge(float _value)
     {
         charge = Mathf.Clamp(_value, 0, 100);
@@ -56,7 +56,30 @@ public class Charge : MonoBehaviour
             }
         }
     }   
+    public void AttackingChargeMutiplier()
+    {
+        if (charge > 0 && charge < 26)
+        {
+            chargeMultiplier = 0.5f;
+        }
 
+        if(charge > 25 &&  charge < 51)
+        {
+            chargeMultiplier = 1.0f;
+        }
+        if (charge > 50 && charge < 76)
+        {
+            chargeMultiplier = 1.5f;
+        }
+        if (charge > 75 && charge < 99)
+        {
+            chargeMultiplier = 2.0f;
+        }
+        if (charge == 100)
+        {
+            chargeMultiplier = 3.0f;
+        }
+    }
     void chargeBurst(){
         float burst = 25.0f;
         if(Input.GetKeyDown(KeyCode.Space) && charge > 0){
@@ -66,36 +89,13 @@ public class Charge : MonoBehaviour
         
     }
 
-    void chargeBump() {
+    void chargeBump(){
         float bump = 10.0f;
-        if (Input.GetKeyDown(KeyCode.Z)) {
+        if(Input.GetKeyDown(KeyCode.Z)){
             SetCharge(charge + bump);
         }
     }
-
-    public void attackChargeDamage()
-    {
-        if (charge > 0 && charge <= 25)
-        {
-            multiplier = 0.5f;
-        }
-        if (charge >= 26 && charge <= 50)
-        {
-            multiplier = 1f;
-        }
-        if (charge >= 51 && charge <= 75)
-        {
-            multiplier = 1.5f;
-        }
-        if (charge >= 76 && charge <= 99)
-        {
-            multiplier = 2f;
-        }
-        if (charge == 100)
-        {
-            multiplier = 3f;
-        }
-    }
+    
 
     void Update(){
         tempTime +=Time.deltaTime;
@@ -105,16 +105,15 @@ public class Charge : MonoBehaviour
 
         }
 
-        SetCharge(charge);
-        attackChargeDamage();
+        AttackingChargeMutiplier();
         CrouchCharge();
         //Invoke("CrouchCharge", 3.0f);
-        
-        chargeBurst();
-        chargeBump();
-        if(chargeRate > 0){
-            sprite.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
-        }
+        SetCharge(charge);
+        //chargeBurst();
+        //chargeBump();
+        //if(chargeRate > 0){
+            //sprite.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
+        //}
 
     }
 }
