@@ -30,7 +30,7 @@ public class CharacterControllerXA : MonoBehaviour
     private Vector2 motion = Vector2.zero;
     public Animator animator;
     public GameObject target;
-
+    public float airSpeed = 0.335f;
 
     [Header("Events")]
     [Space]
@@ -144,6 +144,7 @@ public class CharacterControllerXA : MonoBehaviour
             if(!grounded)
             {
                 block = false;
+                move *= airSpeed;
             }
 
             if (block)

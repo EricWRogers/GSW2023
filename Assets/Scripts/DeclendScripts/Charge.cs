@@ -12,9 +12,10 @@ public class Charge : MonoBehaviour
     public float startCR = 0.0f;
     public float chargeRate;
     public float delay = 2.0f;
+    public float chargeMultiplier = 0.0f;
     float tempTime;
     private SpriteRenderer sprite;
-    Color playerColor;
+    //Color playerColor;
     public Slider slider;
     public Timer timer;
     bool delayFinish = false;
@@ -55,7 +56,30 @@ public class Charge : MonoBehaviour
             }
         }
     }   
+    public void AttackingChargeMutiplier()
+    {
+        if (charge > 0 && charge < 26)
+        {
+            chargeMultiplier = 0.5f;
+        }
 
+        if(charge > 25 &&  charge < 51)
+        {
+            chargeMultiplier = 1.0f;
+        }
+        if (charge > 50 && charge < 76)
+        {
+            chargeMultiplier = 1.5f;
+        }
+        if (charge > 75 && charge < 99)
+        {
+            chargeMultiplier = 2.0f;
+        }
+        if (charge == 100)
+        {
+            chargeMultiplier = 3.0f;
+        }
+    }
     void chargeBurst(){
         float burst = 25.0f;
         if(Input.GetKeyDown(KeyCode.Space) && charge > 0){
@@ -80,15 +104,16 @@ public class Charge : MonoBehaviour
             timer.StartTimer();
 
         }
-        
+
+        AttackingChargeMutiplier();
         CrouchCharge();
         //Invoke("CrouchCharge", 3.0f);
-        
-        chargeBurst();
-        chargeBump();
-        if(chargeRate > 0){
-            sprite.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
-        }
+        SetCharge(charge);
+        //chargeBurst();
+        //chargeBump();
+        //if(chargeRate > 0){
+            //sprite.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
+        //}
 
     }
 }

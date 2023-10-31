@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 2116307576}
+  playerCharge: {fileID: 582754342}
   targetPlayer: {fileID: 2116307577}
   hitCollider: {fileID: 165821479}
   damageNumber: 8
@@ -994,7 +995,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486387612}
+  m_GameObject: {fileID: 475136377}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
@@ -1097,6 +1098,7 @@ GameObject:
   - component: {fileID: 582754342}
   - component: {fileID: 582754343}
   - component: {fileID: 582754345}
+  - component: {fileID: 582754346}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -1170,6 +1172,7 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 582754335}
   target: {fileID: 2116307575}
+  airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1205,6 +1208,7 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 0}
   target: {fileID: 2116307575}
+  airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1345,7 +1349,7 @@ Transform:
   m_GameObject: {fileID: 582754333}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.16, y: 0, z: 0}
+  m_LocalPosition: {x: 6.71, y: -0.9050069, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1374,6 +1378,7 @@ MonoBehaviour:
   startCR: 0
   chargeRate: 0
   delay: 2
+  chargeMultiplier: 0
   slider: {fileID: 1820738377}
   timer: {fileID: 582754343}
 --- !u!114 &582754343
@@ -1421,6 +1426,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall1: -6.9626
   wall2: 6.9829
+--- !u!114 &582754346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582754333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa98ee6efe61dd94bb1a7e0ede2168fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 582754336}
+  shadow: {fileID: 1302227644}
 --- !u!1 &598400527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 582754334}
+  playerCharge: {fileID: 2116307584}
   targetPlayer: {fileID: 582754337}
   hitCollider: {fileID: 1005424222}
   damageNumber: 8
@@ -3334,7 +3354,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0634, y: -0.02, z: 0}
-  m_LocalScale: {x: 1.441697, y: 1.4149833, z: 1.0177}
+  m_LocalScale: {x: 1.441697, y: 1.4503578, z: 1.0177}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3541,6 +3561,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1747231355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2871060185627846337, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+  m_PrefabInstance: {fileID: 2045781800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1747231360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747231355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec777d543ebc16b48883e3320510313b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1805997372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4029,7 +4066,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3890595425096923427, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1860375006}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2871060185627846337, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1747231360}
   m_SourcePrefab: {fileID: 100100000, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
 --- !u!114 &2045781805 stripped
 MonoBehaviour:
@@ -4094,6 +4134,7 @@ GameObject:
   - component: {fileID: 2116307584}
   - component: {fileID: 2116307585}
   - component: {fileID: 2116307587}
+  - component: {fileID: 2116307588}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -4146,6 +4187,7 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 2116307579}
   target: {fileID: 582754333}
+  airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4191,6 +4233,7 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 2116307579}
   target: {fileID: 582754333}
+  airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4228,7 +4271,7 @@ Transform:
   m_GameObject: {fileID: 2116307575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.09, y: 0, z: 0}
+  m_LocalPosition: {x: -6.71, y: -0.9050069, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4371,6 +4414,7 @@ MonoBehaviour:
   startCR: 0
   chargeRate: 0
   delay: 2
+  chargeMultiplier: 0
   slider: {fileID: 624143875}
   timer: {fileID: 2116307585}
 --- !u!114 &2116307585
@@ -4418,6 +4462,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wall1: -6.9626
   wall2: 6.9829
+--- !u!114 &2116307588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116307575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa98ee6efe61dd94bb1a7e0ede2168fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 2116307578}
+  shadow: {fileID: 1157257613}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
