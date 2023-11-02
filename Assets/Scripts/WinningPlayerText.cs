@@ -45,10 +45,6 @@ public class WinningPlayerText : MonoBehaviour
             if (p2Wins >= 2)
             {
                 pips.p2r3.enabled = true;
-                //playerOneHealth.SetActive(false);
-                //playerTwoHealth.SetActive(false);
-                //playerOneProtait.SetActive(false);
-                //playerTwoProtait.SetActive(false);
                 winScreen.SetActive(true);
                 Time.timeScale = 0.0f;
                 winner.text = "Player 2 Wins ";
@@ -67,10 +63,6 @@ public class WinningPlayerText : MonoBehaviour
             if (p1Wins >= 2)
             {
                 pips.p1r3.enabled = true;
-                //playerOneHealth.SetActive(false);
-                //playerTwoHealth.SetActive(false);
-                //playerOneProtait.SetActive(false);
-                //playerTwoProtait.SetActive(false);
                 winScreen.SetActive(true);
                 Time.timeScale = 0.0f;
                 winner.text = "Player 1 Wins ";
