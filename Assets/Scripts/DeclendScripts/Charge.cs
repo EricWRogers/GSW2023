@@ -92,12 +92,12 @@ public class Charge : MonoBehaviour
     {
         if (charge > 0 && charge < 26)
         {
-            speedMultiplier = 3.0f;
+            speedMultiplier = 1.5f;
         }
 
         if (charge > 25 && charge < 51)
         {
-            speedMultiplier = 1.5f;
+            speedMultiplier = 1.2f;
         }
         if (charge > 50 && charge < 76)
         {
@@ -109,7 +109,7 @@ public class Charge : MonoBehaviour
         }
         if (charge == 100)
         {
-            speedMultiplier = 0.7f;
+            speedMultiplier = 0.8f;
         }
 
 
