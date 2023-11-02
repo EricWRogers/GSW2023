@@ -56,7 +56,7 @@ public class CharacterMovement : CharacterControllerXA
 
             if (Input.GetAxisRaw(playerNum+" Button 3") > 0.1)
             {
-                //block = true;
+                block = true;
             }
             // float xInput = Input.GetAxis("Horizontal");
             // // /*isTouchingGround = IsTouchingGround();*/
