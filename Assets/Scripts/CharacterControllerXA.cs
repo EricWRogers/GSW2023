@@ -30,7 +30,7 @@ public class CharacterControllerXA : MonoBehaviour
     private Vector2 motion = Vector2.zero;
     public Animator animator;
     public GameObject target;
-    public GameObject playerText;
+    //public GameObject playerText;
     public float airSpeed = 0.335f;
 
     [Header("Events")]

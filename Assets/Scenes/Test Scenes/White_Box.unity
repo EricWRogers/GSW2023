@@ -1172,7 +1172,6 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 582754335}
   target: {fileID: 2116307575}
-  playerText: {fileID: 941483945}
   airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
@@ -1209,7 +1208,6 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 0}
   target: {fileID: 2116307575}
-  playerText: {fileID: 941483945}
   airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
@@ -1426,8 +1424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc6422ab6162bc4f91a016fd4134cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall1: -6.9626
-  wall2: 6.9829
 --- !u!114 &582754346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2195,7 +2191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -6.9399977, y: 2.2799995}
+  m_AnchoredPosition: {x: -6.56, y: 2.2799995}
   m_SizeDelta: {x: 6.6967, y: 3.7669}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965918151
@@ -4602,7 +4598,6 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 2116307579}
   target: {fileID: 582754333}
-  playerText: {fileID: 965918146}
   airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
@@ -4649,7 +4644,6 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   animator: {fileID: 2116307579}
   target: {fileID: 582754333}
-  playerText: {fileID: 965918146}
   airSpeed: 0.5
   OnLandEvent:
     m_PersistentCalls:
@@ -4877,8 +4871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc6422ab6162bc4f91a016fd4134cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall1: -9.016
-  wall2: 6.9829
 --- !u!114 &2116307588
 MonoBehaviour:
   m_ObjectHideFlags: 0
