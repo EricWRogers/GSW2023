@@ -55,8 +55,7 @@ public class WinningPlayerText : MonoBehaviour
             {
                 roundManager.p2Wins = p2Wins + 1;
                 SceneManager.LoadSceneAsync("White_Box");
-            }
-            
+            }   
         }
         if (playerTwo.currentHealth == 0)
         {
@@ -75,7 +74,7 @@ public class WinningPlayerText : MonoBehaviour
                 SceneManager.LoadSceneAsync("White_Box");
             }
         }
-        else
+        else if(playerTwo.currentHealth != 0 && playerOne.currentHealth != 0)
         {
             Time.timeScale = 1.0f;
         }

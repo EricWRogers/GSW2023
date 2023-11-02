@@ -30,7 +30,9 @@ public class CharacterMovement : CharacterControllerXA
 
         void Update()
         {
-            horizontalMove = Input.GetAxisRaw(playerNum+" Horizontal") * speed;
+            
+            horizontalMove = Input.GetAxisRaw(playerNum+" Horizontal") * speed * playerCharge.speedMultiplier;
+;
             if (Input.GetButtonDown(playerNum+" Jump"))
             {
                 jump = true;
