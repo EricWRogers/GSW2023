@@ -45,10 +45,6 @@ public class WinningPlayerText : MonoBehaviour
             if (p2Wins >= 2)
             {
                 pips.p2r3.enabled = true;
-                //playerOneHealth.SetActive(false);
-                //playerTwoHealth.SetActive(false);
-                //playerOneProtait.SetActive(false);
-                //playerTwoProtait.SetActive(false);
                 winScreen.SetActive(true);
                 Time.timeScale = 0.0f;
                 winner.text = "Player 2 Wins ";
@@ -59,18 +55,13 @@ public class WinningPlayerText : MonoBehaviour
             {
                 roundManager.p2Wins = p2Wins + 1;
                 SceneManager.LoadSceneAsync("White_Box");
-            }
-            
+            }   
         }
         if (playerTwo.currentHealth == 0)
         {
             if (p1Wins >= 2)
             {
                 pips.p1r3.enabled = true;
-                //playerOneHealth.SetActive(false);
-                //playerTwoHealth.SetActive(false);
-                //playerOneProtait.SetActive(false);
-                //playerTwoProtait.SetActive(false);
                 winScreen.SetActive(true);
                 Time.timeScale = 0.0f;
                 winner.text = "Player 1 Wins ";
@@ -83,7 +74,7 @@ public class WinningPlayerText : MonoBehaviour
                 SceneManager.LoadSceneAsync("White_Box");
             }
         }
-        else
+        else if(playerTwo.currentHealth != 0 && playerOne.currentHealth != 0)
         {
             Time.timeScale = 1.0f;
         }

@@ -30,7 +30,9 @@ public class CharacterMovement : CharacterControllerXA
 
         void Update()
         {
-            horizontalMove = Input.GetAxisRaw(playerNum+" Horizontal") * speed;
+            
+            horizontalMove = Input.GetAxisRaw(playerNum+" Horizontal") * speed * playerCharge.speedMultiplier;
+;
             if (Input.GetButtonDown(playerNum+" Jump"))
             {
                 jump = true;
@@ -56,7 +58,7 @@ public class CharacterMovement : CharacterControllerXA
 
             if (Input.GetAxisRaw(playerNum+" Button 3") > 0.1)
             {
-                //block = true;
+                block = true;
             }
             // float xInput = Input.GetAxis("Horizontal");
             // // /*isTouchingGround = IsTouchingGround();*/
