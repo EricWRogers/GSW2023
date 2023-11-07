@@ -30,7 +30,8 @@ public class CharacterControllerXA : MonoBehaviour
     private Vector2 motion = Vector2.zero;
     public Animator animator;
     public GameObject target;
-
+    //public GameObject playerText;
+    public float airSpeed = 0.335f;
 
     [Header("Events")]
     [Space]
@@ -144,6 +145,7 @@ public class CharacterControllerXA : MonoBehaviour
             if(!grounded)
             {
                 block = false;
+                move *= airSpeed;
             }
 
             if (block)
@@ -158,12 +160,14 @@ public class CharacterControllerXA : MonoBehaviour
              if (gameObject.GetComponent<Transform>().position.x < target.GetComponent<Transform>().position.x && !facingRight)
             {
                 Flip();
+                //playerText.transform.localScale *= 1;
              }
 
              else if (gameObject.GetComponent<Transform>().position.x > target.GetComponent<Transform>().position.x && facingRight)
             {
-                 Flip();
-             }
+                Flip();
+                //playerText.transform.localScale *= 1;
+            }
         }
 
         if (grounded && jump)
@@ -194,5 +198,7 @@ public class CharacterControllerXA : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+
+        //playerText.transform.localScale *= 1;
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Attacking : MonoBehaviour
 {
     public HealthBar playerHealth;
+    public Charge playerCharge;
     public CharacterMovement targetPlayer;
     private CharacterMovement hitCol;
     public GameObject hitCollider;
@@ -25,8 +26,11 @@ public class Attacking : MonoBehaviour
         {
             if (hitCol.playerNum == targetPlayer.playerNum)
             {
+                
                 Debug.Log("is Hit");
-                playerHealth.TakeDamage(damageNumber);
+                playerHealth.TakeDamage(damageNumber * playerCharge.chargeMultiplier);
+                Debug.Log("Damage Number" + damageNumber * playerCharge.chargeMultiplier);
+                Debug.Log("Charge Multiplier" + playerCharge.chargeMultiplier);
             }
         }
 
