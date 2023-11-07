@@ -1166,6 +1166,7 @@ GameObject:
   - component: {fileID: 582754343}
   - component: {fileID: 582754345}
   - component: {fileID: 582754346}
+  - component: {fileID: 582754347}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -1200,7 +1201,7 @@ Animator:
   m_GameObject: {fileID: 582754333}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f27a8e4298be9b04abe26e2cb08fae41, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1284,7 +1285,7 @@ MonoBehaviour:
       m_Calls: []
   crouching: 0
   controller: {fileID: 582754336}
-  speed: 50
+  speed: 0
   collisionTestOffset: 0
   playerNum: Player 2
   playerCharge: {fileID: 582754342}
@@ -1448,6 +1449,7 @@ MonoBehaviour:
   chargeRate: 0
   delay: 2
   chargeMultiplier: 0
+  speedMultiplier: 0
   slider: {fileID: 1820738377}
   timer: {fileID: 582754343}
 --- !u!114 &582754343
@@ -1507,6 +1509,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 582754336}
   shadow: {fileID: 1302227644}
+--- !u!114 &582754347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582754333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fdff43188a635e45b6b82d7e5831b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
 --- !u!1 &598400527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,6 +4831,7 @@ GameObject:
   - component: {fileID: 2116307585}
   - component: {fileID: 2116307587}
   - component: {fileID: 2116307588}
+  - component: {fileID: 2116307589}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -4877,7 +4893,7 @@ MonoBehaviour:
       m_Calls: []
   crouching: 0
   controller: {fileID: 2116307578}
-  speed: 50
+  speed: 0
   collisionTestOffset: 0
   playerNum: Player 1
   playerCharge: {fileID: 2116307584}
@@ -4932,7 +4948,7 @@ Animator:
   m_GameObject: {fileID: 2116307575}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f27a8e4298be9b04abe26e2cb08fae41, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5098,6 +5114,7 @@ MonoBehaviour:
   chargeRate: 0
   delay: 2
   chargeMultiplier: 0
+  speedMultiplier: 0
   slider: {fileID: 624143875}
   timer: {fileID: 2116307585}
 --- !u!114 &2116307585
@@ -5157,6 +5174,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 2116307578}
   shadow: {fileID: 1157257613}
+--- !u!114 &2116307589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116307575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fdff43188a635e45b6b82d7e5831b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
