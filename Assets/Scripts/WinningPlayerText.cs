@@ -74,7 +74,7 @@ public class WinningPlayerText : MonoBehaviour
                 SceneManager.LoadSceneAsync("White_Box");
             }
         }
-        else if(playerTwo.currentHealth != 0 && playerOne.currentHealth != 0)
+        else if(playerTwo.currentHealth != 0 && playerOne.currentHealth != 0 && !gameObject.GetComponent<Pause>().isPaused)
         {
             Time.timeScale = 1.0f;
         }
