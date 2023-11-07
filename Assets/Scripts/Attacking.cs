@@ -27,6 +27,7 @@ public class Attacking : MonoBehaviour
             {
                 Debug.Log("is Hit");
                 playerHealth.TakeDamage(damageNumber);
+                this.GetComponentInParent<SoundBehaviour>().OnHit();
             }
         }
 
