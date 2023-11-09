@@ -99,6 +99,10 @@ public class WinningPlayerText : MonoBehaviour
                     SceneManager.LoadSceneAsync("White_Box");
                 }
             }
+            else if(playerOne.currentHealth == playerTwo.currentHealth)
+            {
+                SceneManager.LoadSceneAsync("White_Box");
+            }
             else
             {
                 if (p2Wins >= 2)

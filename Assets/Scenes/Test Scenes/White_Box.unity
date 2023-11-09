@@ -123,6 +123,73 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &18537520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18537522}
+  - component: {fileID: 18537523}
+  - component: {fileID: 18537524}
+  m_Layer: 0
+  m_Name: Countdown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &18537522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18537520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &18537523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18537520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout:
+    m_PersistentCalls:
+      m_Calls: []
+  autoStart: 1
+  autoRestart: 0
+  countDownTime: 10
+  timeScale: 1
+--- !u!114 &18537524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18537520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b7c3806eee5ae4b9aa4996cb751a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 18537523}
+  timeLeft: 0
+  text: {fileID: 1196800489}
 --- !u!1 &75878562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1515,7 @@ MonoBehaviour:
   chargeRate: 0
   delay: 2
   chargeMultiplier: 0
+  speedMultiplier: 0
   slider: {fileID: 1820738377}
   timer: {fileID: 582754343}
 --- !u!114 &582754343
@@ -2947,6 +3015,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1196800489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6190137088802144833, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+  m_PrefabInstance: {fileID: 2045781800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214758155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,6 +4789,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1860375007}
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: countdown
+      value: 
+      objectReference: {fileID: 18537524}
+    - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: playerOne
       value: 
       objectReference: {fileID: 2116307576}
@@ -5098,6 +5181,7 @@ MonoBehaviour:
   chargeRate: 0
   delay: 2
   chargeMultiplier: 0
+  speedMultiplier: 0
   slider: {fileID: 624143875}
   timer: {fileID: 2116307585}
 --- !u!114 &2116307585
@@ -5173,3 +5257,4 @@ SceneRoots:
   - {fileID: 1737646742}
   - {fileID: 1594402691}
   - {fileID: 2045781800}
+  - {fileID: 18537522}
