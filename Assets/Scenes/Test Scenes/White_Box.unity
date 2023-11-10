@@ -330,6 +330,7 @@ MonoBehaviour:
   playerCharge: {fileID: 582754342}
   targetPlayer: {fileID: 2116307577}
   hitCollider: {fileID: 165821479}
+  knockbackNumber: 5
   damageNumber: 8
 --- !u!70 &165821482
 CapsuleCollider2D:
@@ -1293,6 +1294,7 @@ MonoBehaviour:
   kick: 0
   block: 0
   spriteRenderer: {fileID: 0}
+  _rb2d: {fileID: 0}
 --- !u!50 &582754338
 Rigidbody2D:
   serializedVersion: 4
@@ -1448,6 +1450,7 @@ MonoBehaviour:
   chargeRate: 0
   delay: 2
   chargeMultiplier: 0
+  speedMultiplier: 0
   slider: {fileID: 1820738377}
   timer: {fileID: 582754343}
 --- !u!114 &582754343
@@ -2460,6 +2463,7 @@ MonoBehaviour:
   playerCharge: {fileID: 2116307584}
   targetPlayer: {fileID: 582754337}
   hitCollider: {fileID: 1005424222}
+  knockbackNumber: 5
   damageNumber: 8
 --- !u!70 &1005424225
 CapsuleCollider2D:
@@ -4886,6 +4890,7 @@ MonoBehaviour:
   kick: 0
   block: 0
   spriteRenderer: {fileID: 0}
+  _rb2d: {fileID: 0}
 --- !u!114 &2116307578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,6 +5103,7 @@ MonoBehaviour:
   chargeRate: 0
   delay: 2
   chargeMultiplier: 0
+  speedMultiplier: 0
   slider: {fileID: 624143875}
   timer: {fileID: 2116307585}
 --- !u!114 &2116307585
