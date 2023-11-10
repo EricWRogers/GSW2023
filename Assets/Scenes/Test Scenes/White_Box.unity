@@ -173,7 +173,7 @@ MonoBehaviour:
       m_Calls: []
   autoStart: 1
   autoRestart: 0
-  countDownTime: 10
+  countDownTime: 100
   timeScale: 1
 --- !u!114 &18537524
 MonoBehaviour:
@@ -397,6 +397,7 @@ MonoBehaviour:
   playerCharge: {fileID: 582754342}
   targetPlayer: {fileID: 2116307577}
   hitCollider: {fileID: 165821479}
+  knockbackNumber: 5
   damageNumber: 8
 --- !u!70 &165821482
 CapsuleCollider2D:
@@ -1356,11 +1357,13 @@ MonoBehaviour:
   collisionTestOffset: 0
   playerNum: Player 2
   playerCharge: {fileID: 582754342}
+  spendCharge: 5
   crouch: 0
   punch: 0
   kick: 0
   block: 0
   spriteRenderer: {fileID: 0}
+  _rb2d: {fileID: 0}
 --- !u!50 &582754338
 Rigidbody2D:
   serializedVersion: 4
@@ -2542,6 +2545,7 @@ MonoBehaviour:
   playerCharge: {fileID: 2116307584}
   targetPlayer: {fileID: 582754337}
   hitCollider: {fileID: 1005424222}
+  knockbackNumber: 5
   damageNumber: 8
 --- !u!70 &1005424225
 CapsuleCollider2D:
@@ -4979,11 +4983,13 @@ MonoBehaviour:
   collisionTestOffset: 0
   playerNum: Player 1
   playerCharge: {fileID: 2116307584}
+  spendCharge: 5
   crouch: 0
   punch: 0
   kick: 0
   block: 0
   spriteRenderer: {fileID: 0}
+  _rb2d: {fileID: 0}
 --- !u!114 &2116307578
 MonoBehaviour:
   m_ObjectHideFlags: 0
