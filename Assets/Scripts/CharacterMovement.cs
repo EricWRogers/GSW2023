@@ -22,7 +22,7 @@ public class CharacterMovement : CharacterControllerXA
 
         public SpriteRenderer spriteRenderer;
 
-        private Rigidbody2D _rb2d;
+        public Rigidbody2D _rb2d;
         
         void Start()
         {
