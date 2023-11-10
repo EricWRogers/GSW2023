@@ -11,6 +11,7 @@ public class CharacterMovement : CharacterControllerXA
         public float collisionTestOffset;
         public string playerNum;
         public Charge playerCharge;
+        public float spendCharge = 5.0f;
         float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
@@ -47,13 +48,13 @@ public class CharacterMovement : CharacterControllerXA
             if (Input.GetButtonDown(playerNum+" Button 1"))
             {
                 punch = true;
-                playerCharge.charge -= 5.0f;
+                playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetButtonDown(playerNum+" Button 2"))
             {
                 kick = true;
-                playerCharge.charge -= 5.0f;
+                playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetAxisRaw(playerNum+" Button 3") > 0.1)

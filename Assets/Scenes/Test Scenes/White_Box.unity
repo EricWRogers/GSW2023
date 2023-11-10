@@ -173,7 +173,7 @@ MonoBehaviour:
       m_Calls: []
   autoStart: 1
   autoRestart: 0
-  countDownTime: 10
+  countDownTime: 100
   timeScale: 1
 --- !u!114 &18537524
 MonoBehaviour:
@@ -1356,6 +1356,7 @@ MonoBehaviour:
   collisionTestOffset: 0
   playerNum: Player 2
   playerCharge: {fileID: 582754342}
+  spendCharge: 5
   crouch: 0
   punch: 0
   kick: 0
@@ -4979,6 +4980,7 @@ MonoBehaviour:
   collisionTestOffset: 0
   playerNum: Player 1
   playerCharge: {fileID: 2116307584}
+  spendCharge: 5
   crouch: 0
   punch: 0
   kick: 0
