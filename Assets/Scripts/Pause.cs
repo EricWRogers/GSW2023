@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
@@ -35,14 +36,24 @@ public class Pause : MonoBehaviour
     {
 
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.0f;
         isPaused = true;
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
         isPaused = false;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("BryeMenuTest");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
