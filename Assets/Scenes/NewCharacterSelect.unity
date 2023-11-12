@@ -989,7 +989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744258481}
-  - component: {fileID: 744258482}
+  - component: {fileID: 744258483}
   m_Layer: 0
   m_Name: GlobalVariables
   m_TagString: storedVar
@@ -1012,7 +1012,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &744258482
+--- !u!114 &744258483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1021,13 +1021,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 744258480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb394df982952b04aa5f604d5a1dc74a, type: 3}
+  m_Script: {fileID: 11500000, guid: 626d2e4af9738b549ac4b2176a17832b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Selection: 
-  Player2Selection: 
+  Player1Selection: {fileID: 0}
+  Player1SelectionColor: {r: 1, g: 1, b: 1, a: 1}
+  Player2Selection: {fileID: 0}
+  Player2SelectionColor: {r: 1, g: 1, b: 1, a: 1}
   MatchWinner: 
-  SelectedStage: 
+  SelectedStage: Default
 --- !u!1 &776330210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1180,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1Selection: {fileID: 0}
   player2Selection: {fileID: 0}
+  player1SelectionInt: 0
+  player2SelectionInt: 0
+  characterObject: {fileID: 0}
+  charList:
+  - {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
+  - {fileID: 11400000, guid: 518404004c1e49843ad14861410bb82a, type: 2}
 --- !u!1 &813048061
 GameObject:
   m_ObjectHideFlags: 0
