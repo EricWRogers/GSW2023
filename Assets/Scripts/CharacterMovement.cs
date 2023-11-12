@@ -11,6 +11,7 @@ public class CharacterMovement : CharacterControllerXA
         public float collisionTestOffset;
         public string playerNum;
         public Charge playerCharge;
+        public float spendCharge = 5.0f;
         float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
@@ -21,7 +22,7 @@ public class CharacterMovement : CharacterControllerXA
 
         public SpriteRenderer spriteRenderer;
 
-        private Rigidbody2D _rb2d;
+        public Rigidbody2D _rb2d;
         
         void Start()
         {
@@ -46,13 +47,13 @@ public class CharacterMovement : CharacterControllerXA
             if (Input.GetButtonDown(playerNum+" Punch"))
             {
                 punch = true;
-                playerCharge.charge -= 5.0f;
+                playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetButtonDown(playerNum+" Kick"))
             {
                 kick = true;
-                playerCharge.charge -= 5.0f;
+                playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetAxisRaw(playerNum+" Block") > 0.1)

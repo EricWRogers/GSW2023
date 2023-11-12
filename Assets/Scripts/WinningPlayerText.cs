@@ -26,6 +26,8 @@ public class WinningPlayerText : MonoBehaviour
 
     public Pips pips;
 
+    public Countdown countdown;
+
     private void Awake()
     {
         Debug.Log("Turn off WinScreen");
@@ -75,8 +77,50 @@ public class WinningPlayerText : MonoBehaviour
             }
         }
         else if(playerTwo.currentHealth != 0 && playerOne.currentHealth != 0 && !gameObject.GetComponent<Pause>().isPaused)
+        if(playerTwo.currentHealth != 0 && playerOne.currentHealth != 0)
         {
             Time.timeScale = 1.0f;
+        }
+        if(countdown.timeLeft == 0)
+        {
+            if (playerOne.currentHealth > playerTwo.currentHealth)
+            {
+                if (p1Wins >= 2)
+                {
+                    pips.p1r3.enabled = true;
+                    winScreen.SetActive(true);
+                    Time.timeScale = 0.0f;
+                    winner.text = "Player 1 Wins ";
+                    roundManager.p1Wins = 0;
+                    roundManager.p2Wins = 0;
+                }
+                else
+                {
+                    roundManager.p1Wins = p1Wins + 1;
+                    SceneManager.LoadSceneAsync("White_Box");
+                }
+            }
+            else if(playerOne.currentHealth == playerTwo.currentHealth)
+            {
+                SceneManager.LoadSceneAsync("White_Box");
+            }
+            else
+            {
+                if (p2Wins >= 2)
+                {
+                    pips.p2r3.enabled = true;
+                    winScreen.SetActive(true);
+                    Time.timeScale = 0.0f;
+                    winner.text = "Player 2 Wins ";
+                    roundManager.p2Wins = 0;
+                    roundManager.p1Wins = 0;
+                }
+                else
+                {
+                    roundManager.p2Wins = p2Wins + 1;
+                    SceneManager.LoadSceneAsync("White_Box");
+                }
+            }
         }
     }
 }
