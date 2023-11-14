@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 18537523}
-  timeLeft: 0
+  timeLeft: 100
   text: {fileID: 1196800489}
 --- !u!1 &75878562
 GameObject:
@@ -4809,7 +4809,7 @@ PrefabInstance:
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: countdown
       value: 
-      objectReference: {fileID: 18537524}
+      objectReference: {fileID: 0}
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: playerOne
       value: 
