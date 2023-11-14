@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cafe70c1e25ebc4888ec162fedb81b5, type: 3}
-  m_Name: Kable
+  m_Name: Kable 1
   m_EditorClassIdentifier: 
   speed: 50
   characterName: Kable
   characterSprite: {fileID: 449306933, guid: 87ebc46392e525841938f0d555ddd502, type: 3}
-  newColor: {r: 1, g: 1, b: 1, a: 1}
+  newColor: {r: 0.07773125, g: 1, b: 0, a: 1}
   animations: {fileID: 9100000, guid: f27a8e4298be9b04abe26e2cb08fae41, type: 2}

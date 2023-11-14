@@ -10,6 +10,7 @@ public class CharacterHolder : MonoBehaviour
     {
         gameObject.GetComponent<Animator>().runtimeAnimatorController = character.animations;
         gameObject.GetComponent<CharacterMovement>().speed = character.speed;
+        gameObject.GetComponent<SpriteRenderer>().color = character.newColor;
     }
 
     // Update is called once per frame
