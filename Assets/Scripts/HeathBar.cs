@@ -56,10 +56,10 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-            Debug.Log("take damge");
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+            //TakeDamage(20);
+           // Debug.Log("take damge");
+       // }
     }
 }

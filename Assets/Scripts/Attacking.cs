@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 
 
@@ -12,8 +11,8 @@ public class Attacking : MonoBehaviour
     private CharacterMovement hitCol;
     public GameObject hitCollider;
 
-    public float damageNumber = 0.0f;
-    //public float chargeDischarge = 0.0f;
+    public float knockbackNumber = 5.0f;
+    [SerializeField] private float damageNumber = 0.0f;
 
     void Awake()
     {
@@ -28,11 +27,14 @@ public class Attacking : MonoBehaviour
         {
             if (hitCol.playerNum == targetPlayer.playerNum)
             {
+                Vector2 direction = (collision.transform.position - transform.position).normalized;
+                Vector2 knockback = direction * knockbackNumber;
+                Debug.Log(knockback);
+                targetPlayer._rb2d.AddForce(knockback, ForceMode2D.Impulse);
                 Debug.Log("is Hit");
-                Debug.Log(playerCharge.multiplier);
-                playerHealth.TakeDamage(damageNumber * playerCharge.multiplier);
-                Debug.Log("Damage is : " + damageNumber * playerCharge.multiplier);
-                
+                playerHealth.TakeDamage(damageNumber * playerCharge.chargeMultiplier);
+                Debug.Log("Damage Number" + damageNumber * playerCharge.chargeMultiplier);
+                Debug.Log("Charge Multiplier" + playerCharge.chargeMultiplier);
             }
         }
 
