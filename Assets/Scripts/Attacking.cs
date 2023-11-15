@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
+    public AudioSource audioPlayer;
     public HealthBar playerHealth;
     public Charge playerCharge;
     public CharacterMovement targetPlayer;
@@ -25,6 +26,7 @@ public class Attacking : MonoBehaviour
         hitCol = collision.gameObject.GetComponentInParent<CharacterMovement>();
         if (collision.gameObject.CompareTag("HurtCollider"))
         {
+                audioPlayer.Play();
             if (hitCol.playerNum == targetPlayer.playerNum)
             {
                 Vector2 direction = (collision.transform.position - transform.position).normalized;
@@ -33,8 +35,10 @@ public class Attacking : MonoBehaviour
                 targetPlayer._rb2d.AddForce(knockback, ForceMode2D.Impulse);
                 Debug.Log("is Hit");
                 playerHealth.TakeDamage(damageNumber * playerCharge.chargeMultiplier);
+                audioPlayer.Play();
                 Debug.Log("Damage Number" + damageNumber * playerCharge.chargeMultiplier);
                 Debug.Log("Charge Multiplier" + playerCharge.chargeMultiplier);
+
             }
         }
 
