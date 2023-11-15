@@ -11,7 +11,8 @@ public class CharacterMovement : CharacterControllerXA
         public float collisionTestOffset;
         public string playerNum;
         public Charge playerCharge;
-        float horizontalMove = 0.0f;
+        public float spendCharge = 5.0f;
+        public float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
 
@@ -21,7 +22,7 @@ public class CharacterMovement : CharacterControllerXA
 
         public SpriteRenderer spriteRenderer;
 
-        private Rigidbody2D _rb2d;
+        public Rigidbody2D _rb2d;
         
         void Start()
         {
@@ -47,13 +48,13 @@ public class CharacterMovement : CharacterControllerXA
             if (Input.GetButtonDown(playerNum+" Button 1"))
             {
                 punch = true;
-                playerCharge.charge -= 5.0f;
+                playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetButtonDown(playerNum+" Button 2"))
             {
                 kick = true;
-                playerCharge.charge -= 5.0f;
+                playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetAxisRaw(playerNum+" Button 3") > 0.1)
@@ -66,7 +67,7 @@ public class CharacterMovement : CharacterControllerXA
 
             // if (xInput != 0.0f)
             // {
-                
+    
             //     if (/*!TestMove(Vector2.right, collisionTestOffset) && */xInput > 0.0f)
             //     {
             //         motion.x = xInput * (speed*0.1f);
@@ -101,7 +102,7 @@ public class CharacterMovement : CharacterControllerXA
             //         spriteRenderer.flipX = true;
             // }
 
-            // _rb2d.velocity = motion;
+            // _rb2d.velocity = motion;            
         }
 
         void FixedUpdate()
