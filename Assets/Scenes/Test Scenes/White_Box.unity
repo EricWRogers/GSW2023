@@ -396,6 +396,7 @@ MonoBehaviour:
   playerHealth: {fileID: 2116307576}
   playerCharge: {fileID: 582754342}
   targetPlayer: {fileID: 2116307577}
+  stunned: {fileID: 582754348}
   hitCollider: {fileID: 165821479}
   knockbackNumber: 5
   damageNumber: 8
@@ -1264,6 +1265,7 @@ GameObject:
   - component: {fileID: 582754345}
   - component: {fileID: 582754346}
   - component: {fileID: 582754347}
+  - component: {fileID: 582754348}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -1334,6 +1336,7 @@ MonoBehaviour:
   fastFall: 0
   fastFallSpeed: 6
   fallSpeed: 1
+  movementAction: 1
   rb2D: {fileID: 0}
   animator: {fileID: 582754335}
   target: {fileID: 2116307575}
@@ -1370,6 +1373,7 @@ MonoBehaviour:
   fastFall: 0
   fastFallSpeed: 6
   fallSpeed: 1
+  movementAction: 1
   rb2D: {fileID: 0}
   animator: {fileID: 0}
   target: {fileID: 2116307575}
@@ -1387,6 +1391,7 @@ MonoBehaviour:
   playerNum: Player 2
   playerCharge: {fileID: 582754342}
   spendCharge: 5
+  horizontalMove: 0
   crouch: 0
   punch: 0
   kick: 0
@@ -1621,6 +1626,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 518404004c1e49843ad14861410bb82a, type: 2}
+--- !u!114 &582754348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582754333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ec061535653544eb9714019b4b348d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 2116307577}
+  isStun: 0
+  gotHit: 0
+  timeStunned: 1
 --- !u!1 &598400527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2573,6 +2594,7 @@ MonoBehaviour:
   playerHealth: {fileID: 582754334}
   playerCharge: {fileID: 2116307584}
   targetPlayer: {fileID: 582754337}
+  stunned: {fileID: 2116307590}
   hitCollider: {fileID: 1005424222}
   knockbackNumber: 5
   damageNumber: 8
@@ -5254,6 +5276,7 @@ GameObject:
   - component: {fileID: 2116307587}
   - component: {fileID: 2116307588}
   - component: {fileID: 2116307589}
+  - component: {fileID: 2116307590}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -5303,6 +5326,7 @@ MonoBehaviour:
   fastFall: 0
   fastFallSpeed: 6
   fallSpeed: 1
+  movementAction: 1
   rb2D: {fileID: 0}
   animator: {fileID: 2116307579}
   target: {fileID: 582754333}
@@ -5320,6 +5344,7 @@ MonoBehaviour:
   playerNum: Player 1
   playerCharge: {fileID: 2116307584}
   spendCharge: 5
+  horizontalMove: 0
   crouch: 0
   punch: 0
   kick: 0
@@ -5351,6 +5376,7 @@ MonoBehaviour:
   fastFall: 0
   fastFallSpeed: 6
   fallSpeed: 1
+  movementAction: 1
   rb2D: {fileID: 0}
   animator: {fileID: 2116307579}
   target: {fileID: 582754333}
@@ -5611,6 +5637,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
+--- !u!114 &2116307590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116307575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ec061535653544eb9714019b4b348d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 582754337}
+  isStun: 0
+  gotHit: 0
+  timeStunned: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

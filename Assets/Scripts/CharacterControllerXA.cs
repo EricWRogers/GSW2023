@@ -23,6 +23,7 @@ public class CharacterControllerXA : MonoBehaviour
     public bool fastFall;
     public float fastFallSpeed = 6.0f;
     public float fallSpeed = 1.0f;
+    public float movementAction = 1.0f;
     const float cellingRadius = .2f;
     public Rigidbody2D rb2D;
     private bool facingRight = true;
@@ -142,7 +143,7 @@ public class CharacterControllerXA : MonoBehaviour
                 move *= crouchSpeed;
             }
 
-            if(!grounded)
+            if (!grounded)
             {
                 block = false;
                 move *= airSpeed;

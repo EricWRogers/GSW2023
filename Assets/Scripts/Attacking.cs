@@ -9,6 +9,7 @@ public class Attacking : MonoBehaviour
     public HealthBar playerHealth;
     public Charge playerCharge;
     public CharacterMovement targetPlayer;
+    public HitStun stunned;
     private CharacterMovement hitCol;
     public GameObject hitCollider;
 
@@ -31,14 +32,13 @@ public class Attacking : MonoBehaviour
             {
                 Vector2 direction = (collision.transform.position - transform.position).normalized;
                 Vector2 knockback = direction * knockbackNumber;
-                Debug.Log(knockback);
+                //Debug.Log(knockback);
                 targetPlayer._rb2d.AddForce(knockback, ForceMode2D.Impulse);
-                Debug.Log("is Hit");
+                //Debug.Log("is Hit");
                 playerHealth.TakeDamage(damageNumber * playerCharge.chargeMultiplier);
-                audioPlayer.Play();
-                Debug.Log("Damage Number" + damageNumber * playerCharge.chargeMultiplier);
-                Debug.Log("Charge Multiplier" + playerCharge.chargeMultiplier);
-
+                stunned.gotHit = true;
+                //Debug.Log("Damage Number" + damageNumber * playerCharge.chargeMultiplier);
+                //Debug.Log("Charge Multiplier" + playerCharge.chargeMultiplier);
             }
         }
 
