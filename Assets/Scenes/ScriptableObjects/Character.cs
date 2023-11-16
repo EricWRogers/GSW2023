@@ -9,6 +9,7 @@ public class Character : ScriptableObject
         public string characterName;
         public Sprite characterSprite;
         public Color newColor;
+        public List<Color> colorList;
         public RuntimeAnimatorController animations;
 
         // public virtual void Active()

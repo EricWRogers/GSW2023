@@ -33,13 +33,14 @@ public class CharacterMovement : CharacterControllerXA
         {
             
             horizontalMove = Input.GetAxis(playerNum+" Horizontal") * speed * playerCharge.speedMultiplier;
+            horizontalMove = Input.GetAxis(playerNum+" Horizontal Axis") * speed * playerCharge.speedMultiplier;
 ;
-            if (Input.GetButtonDown(playerNum+" Jump") || Input.GetAxis(playerNum+ " Vertical") >= 0.5f)
+            if (Input.GetButtonDown(playerNum+" Jump") || Input.GetAxis(playerNum+ " Vertical") >= 0.5f | Input.GetAxis(playerNum+ " Vertical Axis") >= 0.5f)
             {
                 jump = true;
             }
 
-            if (Input.GetAxis(playerNum+" Vertical") <= -0.5f)
+            if (Input.GetAxis(playerNum+" Vertical") <= -0.5f | Input.GetAxis(playerNum+ " Vertical Axis") <= -0.5f)
             {
                 crouch = true;
             }

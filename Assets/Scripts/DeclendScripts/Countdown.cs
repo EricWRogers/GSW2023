@@ -7,7 +7,7 @@ using SuperPupSystems.Helper;
 public class Countdown : MonoBehaviour
 {
     public Timer timer;
-    public float timeLeft;
+    public float timeLeft = 100;
     public TMP_Text text;
 
     // Start is called before the first frame update

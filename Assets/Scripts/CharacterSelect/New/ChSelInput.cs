@@ -22,45 +22,44 @@ public class ChSelInput : MonoBehaviour
         float Player2HorizontalAxis = Input.GetAxis("Player 2 Horizontal");
         float Player1VerticalAxis = Input.GetAxis("Player 1 Vertical");
         float Player2VerticalAxis = Input.GetAxis("Player 2 Vertical");
-        
-        
-        if (Player1HorizontalAxis != 0.0f)
+
+        if (Player1HorizontalAxis != 0.0f || Input.GetAxis("Player 1 Horizontal Axis") != 0.0f)
         {
             if(!Player1HorizontalAxisInUse)
             {
-                if(Player1HorizontalAxis >= 0.1f)
+                if(Player1HorizontalAxis >= 0.1f || Input.GetAxis("Player 1 Horizontal Axis") >= 0.1f)
                 {
                     eventScript.P1Input("Right");
                     Player1HorizontalAxisInUse = true;
                 }
-                else if (Player1HorizontalAxis <= -0.1f)
+                else if (Player1HorizontalAxis <= -0.1f || Input.GetAxis("Player 1 Horizontal Axis") <= -0.1f)
                 {
                     eventScript.P1Input("Left");
                     Player1HorizontalAxisInUse = true;
                 }
             }
         }
-        if (Player1VerticalAxis != 0.0f)
+        if (Player1VerticalAxis != 0.0f || Input.GetAxis("Player 1 Vertical Axis") != 0.0f)
         {
             if(!Player1VerticalAxisInUse)
             {
-                if(Player1VerticalAxis >= 0.1f)
+                if(Player1VerticalAxis >= 0.1f || Input.GetAxis("Player 1 Vertical Axis") >= 0.1f)
                 {
                     eventScript.P1Input("Up");
                     Player1VerticalAxisInUse = true;
                 }
-                else if (Player1VerticalAxis <= -0.1f)
+                else if (Player1VerticalAxis <= -0.1f || Input.GetAxis("Player 1 Vertical Axis") <= -0.1f)
                 {
                     eventScript.P1Input("Down");
                     Player1VerticalAxisInUse = true;
                 }
             }
         }
-        if (Player1HorizontalAxis == 0.0f)
+        if (Player1HorizontalAxis == 0.0f && Input.GetAxis("Player 1 Horizontal Axis") == 0.0f)
         {
             Player1HorizontalAxisInUse = false;
         }
-        if (Player1VerticalAxis == 0.0f)
+        if (Player1VerticalAxis == 0.0f && Input.GetAxis("Player 1 Vertical Axis") == 0.0f)
         {
             Player1VerticalAxisInUse = false;
         }
