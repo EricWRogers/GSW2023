@@ -25,14 +25,7 @@ public class ChEventScript : MonoBehaviour
     {  
         if(player1ColorInt == player2ColorInt && player1SelectionInt == player2SelectionInt)
         {
-            if(player1ColorInt != 2)
-            {
-                player2ColorInt = 2;
-            }
-            else
-            {
-                player2ColorInt = 3;
-            }
+            
         }
 
 
@@ -68,7 +61,14 @@ public class ChEventScript : MonoBehaviour
                 }
                 break;
         }
-        
+        if(player1ColorInt == player2ColorInt && input == "Right")
+        {
+            player1ColorInt = player2ColorInt + 1;
+        }
+        else if (player1ColorInt == player2ColorInt && input == "Left")
+        {
+            player1ColorInt = player2ColorInt - 1;
+        }
         VariableUpdate();
     }
     public void P2Input(string input)
@@ -99,6 +99,14 @@ public class ChEventScript : MonoBehaviour
                     player2ColorInt = player2ColorInt - 1;
                 }
                 break;
+        }
+        if(player1ColorInt == player2ColorInt && input == "Right")
+        {
+            player2ColorInt = player1ColorInt + 1;
+        }
+        else if (player1ColorInt == player2ColorInt && input == "Left")
+        {
+            player2ColorInt = player1ColorInt - 1;
         }
         VariableUpdate();
         

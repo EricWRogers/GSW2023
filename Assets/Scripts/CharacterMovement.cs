@@ -32,9 +32,8 @@ public class CharacterMovement : CharacterControllerXA
         void Update()
         {
             
-            horizontalMove = Input.GetAxis(playerNum+" Horizontal") * speed * playerCharge.speedMultiplier;
-            horizontalMove = Input.GetAxis(playerNum+" Horizontal Axis") * speed * playerCharge.speedMultiplier;
-;
+            horizontalMove = (Mathf.Clamp((Input.GetAxis(playerNum+" Horizontal") + Input.GetAxis(playerNum+" Horizontal Axis")),-1,1)) * speed * playerCharge.speedMultiplier; // bad hack but it works well enough
+            //horizontalMove = Input.GetAxis(playerNum+" Horizontal Axis") * speed * playerCharge.speedMultiplier;
             if (Input.GetButtonDown(playerNum+" Jump") || Input.GetAxis(playerNum+ " Vertical") >= 0.5f | Input.GetAxis(playerNum+ " Vertical Axis") >= 0.5f)
             {
                 jump = true;

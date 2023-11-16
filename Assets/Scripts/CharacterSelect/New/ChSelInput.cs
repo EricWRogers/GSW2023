@@ -105,9 +105,9 @@ public class ChSelInput : MonoBehaviour
             Player2VerticalAxisInUse = false;
         }
 
-        if (Input.GetButtonDown("Space Bar"))
+        if (Input.GetButtonDown("Space Bar") || Input.GetButtonDown("Start"))
         {
-            SceneManager.LoadSceneAsync("White_Box");
+            SceneManager.LoadSceneAsync("Game_Scene");
         }
     }
     void FixedUpdate()

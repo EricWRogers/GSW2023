@@ -18,7 +18,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))
         {
             if (isPaused)
             {
@@ -49,7 +49,7 @@ public class Pause : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("BryeMenuTest");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void QuitGame()

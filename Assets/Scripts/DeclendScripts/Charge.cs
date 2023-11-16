@@ -140,7 +140,7 @@ public class Charge : MonoBehaviour
             if (Input.GetAxis(gameObject.GetComponent<CharacterMovement>().playerNum + " Vertical") <= -0.5f)
             {
                 timer.StartTimer();
-                Debug.Log("TIMER");
+                //Debug.Log("TIMER");
 
             }
 
