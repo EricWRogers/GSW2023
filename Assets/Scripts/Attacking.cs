@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
+    public AudioSource audioPlayer;
     public HealthBar playerHealth;
     public Charge playerCharge;
     public CharacterMovement targetPlayer;
@@ -26,6 +27,7 @@ public class Attacking : MonoBehaviour
         hitCol = collision.gameObject.GetComponentInParent<CharacterMovement>();
         if (collision.gameObject.CompareTag("HurtCollider"))
         {
+                audioPlayer.Play();
             if (hitCol.playerNum == targetPlayer.playerNum)
             {
                 Vector2 direction = (collision.transform.position - transform.position).normalized;
