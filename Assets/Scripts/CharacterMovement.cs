@@ -12,7 +12,7 @@ public class CharacterMovement : CharacterControllerXA
         public string playerNum;
         public Charge playerCharge;
         public float spendCharge = 5.0f;
-        float horizontalMove = 0.0f;
+        public float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
 
@@ -67,7 +67,7 @@ public class CharacterMovement : CharacterControllerXA
 
             // if (xInput != 0.0f)
             // {
-                
+    
             //     if (/*!TestMove(Vector2.right, collisionTestOffset) && */xInput > 0.0f)
             //     {
             //         motion.x = xInput * (speed*0.1f);
@@ -102,7 +102,7 @@ public class CharacterMovement : CharacterControllerXA
             //         spriteRenderer.flipX = true;
             // }
 
-            // _rb2d.velocity = motion;
+            // _rb2d.velocity = motion;            
         }
 
         void FixedUpdate()
