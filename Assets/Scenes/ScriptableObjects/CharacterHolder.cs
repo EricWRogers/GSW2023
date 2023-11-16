@@ -11,7 +11,15 @@ public class CharacterHolder : MonoBehaviour
         //get game manager player asset and assign it to character variable here.
         gameObject.GetComponent<Animator>().runtimeAnimatorController = character.animations;
         gameObject.GetComponent<CharacterMovement>().speed = character.speed;
-        gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player1SelectionColor; //(prev value) character.newColor;
+        if(this.name == "Player 1")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player1SelectionColor;
+        }
+        if (this.name == "Player 2")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player2SelectionColor;
+        }
+        
     }
 
     // Update is called once per frame

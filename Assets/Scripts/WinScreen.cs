@@ -7,13 +7,13 @@ public class WinScreen : MonoBehaviour
 {
     public void Retry()
     {
-        SceneManager.LoadSceneAsync("White_Box");
+        SceneManager.LoadSceneAsync("Game_Scene");
     }
 
     public void MainMenu()
     {
         Debug.Log("Main Menu");
-        SceneManager.LoadScene("BryeMenuTest");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void QuitGame()

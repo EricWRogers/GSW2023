@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using SuperPupSystems.GamePlay2D;
+using SuperPupSystems.Helper;
 
 public class CharacterMovement : CharacterControllerXA
 {
@@ -19,6 +20,9 @@ public class CharacterMovement : CharacterControllerXA
         public bool punch;
         public bool kick;
         public bool block;
+
+        //public Timer timer;
+        public bool gotHit = false;
 
         public SpriteRenderer spriteRenderer;
 
@@ -39,7 +43,7 @@ public class CharacterMovement : CharacterControllerXA
                 jump = true;
             }
 
-            if (Input.GetAxis(playerNum+" Vertical") <= -0.5f | Input.GetAxis(playerNum+ " Vertical Axis") <= -0.5f)
+            if (Input.GetAxis(playerNum+" Vertical") <= -0.5f || Input.GetAxis(playerNum+ " Vertical Axis") <= -0.5f)
             {
                 crouch = true;
             }
@@ -61,12 +65,12 @@ public class CharacterMovement : CharacterControllerXA
                 block = true;
             }
             // float xInput = Input.GetAxis("Horizontal");
-            // // /*isTouchingGround = IsTouchingGround();*/
+            // /*isTouchingGround = IsTouchingGround();*/
             // Vector2 motion = _rb2d.velocity;
 
             // if (xInput != 0.0f)
-            // {
-    
+                // {
+
             //     if (/*!TestMove(Vector2.right, collisionTestOffset) && */xInput > 0.0f)
             //     {
             //         motion.x = xInput * (speed*0.1f);
@@ -101,7 +105,14 @@ public class CharacterMovement : CharacterControllerXA
             //         spriteRenderer.flipX = true;
             // }
 
-            // _rb2d.velocity = motion;            
+            // _rb2d.velocity = motion;
+            if (gotHit)
+            {
+                horizontalMove = 0;
+                kick = false;
+                punch = false;
+                block = false;
+            }
         }
 
         void FixedUpdate()
@@ -117,6 +128,11 @@ public class CharacterMovement : CharacterControllerXA
             punch = false;
             kick = false;
             block = false;
+        }
+
+        public void StunnedisOver()
+        {
+            gotHit = false;
         }
 
 }

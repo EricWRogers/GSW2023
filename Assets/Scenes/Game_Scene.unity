@@ -397,7 +397,7 @@ MonoBehaviour:
   playerHealth: {fileID: 2116307576}
   playerCharge: {fileID: 582754342}
   targetPlayer: {fileID: 2116307577}
-  stunned: {fileID: 582754348}
+  timer: {fileID: 1454331979}
   hitCollider: {fileID: 165821479}
   knockbackNumber: 5
   damageNumber: 8
@@ -1266,7 +1266,6 @@ GameObject:
   - component: {fileID: 582754345}
   - component: {fileID: 582754346}
   - component: {fileID: 582754347}
-  - component: {fileID: 582754348}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -1397,6 +1396,7 @@ MonoBehaviour:
   punch: 0
   kick: 0
   block: 0
+  gotHit: 0
   spriteRenderer: {fileID: 0}
   _rb2d: {fileID: 0}
 --- !u!50 &582754338
@@ -1526,6 +1526,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1069328907}
   - {fileID: 486387613}
   - {fileID: 1397570540}
   - {fileID: 1739103273}
@@ -1627,22 +1628,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 518404004c1e49843ad14861410bb82a, type: 2}
---- !u!114 &582754348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582754333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ec061535653544eb9714019b4b348d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 2116307577}
-  isStun: 0
-  gotHit: 0
-  timeStunned: 1
 --- !u!1 &598400527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2581,7 @@ MonoBehaviour:
   playerHealth: {fileID: 582754334}
   playerCharge: {fileID: 2116307584}
   targetPlayer: {fileID: 582754337}
-  stunned: {fileID: 2116307590}
+  timer: {fileID: 1069328908}
   hitCollider: {fileID: 1005424222}
   knockbackNumber: 5
   damageNumber: 8
@@ -2769,6 +2754,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036605219}
   m_CullTransparentMesh: 1
+--- !u!1 &1069328906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1069328907}
+  - component: {fileID: 1069328908}
+  m_Layer: 0
+  m_Name: TimerCountDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1069328907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069328906}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 582754341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1069328908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069328906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 582754337}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: StunnedisOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoStart: 0
+  autoRestart: 0
+  countDownTime: 1
+  timeScale: 1
 --- !u!1 &1135606883
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,6 +4251,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438320070}
   m_CullTransparentMesh: 1
+--- !u!1 &1454331977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1454331978}
+  - component: {fileID: 1454331979}
+  m_Layer: 0
+  m_Name: TimerCountDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1454331978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454331977}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2116307580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1454331979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454331977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeout:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2116307577}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: StunnedisOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  autoStart: 0
+  autoRestart: 0
+  countDownTime: 1
+  timeScale: 1
 --- !u!1 &1594402689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,7 +5473,6 @@ GameObject:
   - component: {fileID: 2116307587}
   - component: {fileID: 2116307588}
   - component: {fileID: 2116307589}
-  - component: {fileID: 2116307590}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -5435,6 +5545,7 @@ MonoBehaviour:
   punch: 0
   kick: 0
   block: 0
+  gotHit: 0
   spriteRenderer: {fileID: 0}
   _rb2d: {fileID: 0}
 --- !u!114 &2116307578
@@ -5503,11 +5614,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116307575}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.71, y: -0.9050069, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1454331978}
   - {fileID: 1941852012}
   - {fileID: 1805997373}
   - {fileID: 861895382}
@@ -5680,6 +5792,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2116307577}
+        m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
+        m_MethodName: StunnedisOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   autoStart: 0
   autoRestart: 0
   countDownTime: 0.5
@@ -5723,22 +5847,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
---- !u!114 &2116307590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116307575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ec061535653544eb9714019b4b348d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 582754337}
-  isStun: 0
-  gotHit: 0
-  timeStunned: 1
 --- !u!1 &2143636390
 GameObject:
   m_ObjectHideFlags: 0
@@ -5872,12 +5980,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 342137691}
-  - {fileID: 2116307580}
   - {fileID: 965918150}
   - {fileID: 941483946}
   - {fileID: 1162373567}
   - {fileID: 75878566}
   - {fileID: 582754341}
+  - {fileID: 2116307580}
   - {fileID: 419386959}
   - {fileID: 337183688}
   - {fileID: 1737646742}
