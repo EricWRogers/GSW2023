@@ -43,7 +43,7 @@ public class CharacterMovement : CharacterControllerXA
                 jump = true;
             }
 
-            if (Input.GetAxis(playerNum+" Vertical") <= -0.5f | Input.GetAxis(playerNum+ " Vertical Axis") <= -0.5f)
+            if (Input.GetAxis(playerNum+" Vertical") <= -0.5f || Input.GetAxis(playerNum+ " Vertical Axis") <= -0.5f)
             {
                 crouch = true;
             }
