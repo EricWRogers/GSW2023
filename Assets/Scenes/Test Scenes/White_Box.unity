@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLeft: 0
   timeout:
     m_PersistentCalls:
       m_Calls: []
@@ -1571,7 +1570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLeft: 0
   timeout:
     m_PersistentCalls:
       m_Calls:
@@ -2812,7 +2810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLeft: 0
   timeout:
     m_PersistentCalls:
       m_Calls:
@@ -4310,7 +4307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLeft: 0
   timeout:
     m_PersistentCalls:
       m_Calls:
@@ -5709,7 +5705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_timeLeft: 0
   timeout:
     m_PersistentCalls:
       m_Calls:
@@ -5780,22 +5775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
---- !u!114 &2116307590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2116307575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ec061535653544eb9714019b4b348d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 582754337}
-  isStun: 0
-  gotHit: 0
-  timeStunned: 1
 --- !u!1 &2143636390
 GameObject:
   m_ObjectHideFlags: 0
