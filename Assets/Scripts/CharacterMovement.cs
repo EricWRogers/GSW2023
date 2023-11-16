@@ -36,32 +36,31 @@ public class CharacterMovement : CharacterControllerXA
         void Update()
         {
             
-            horizontalMove = Input.GetAxisRaw(playerNum+" Horizontal") * speed * playerCharge.speedMultiplier;
-
-            if (Input.GetButtonDown(playerNum+" Jump"))
+            horizontalMove = (Mathf.Clamp((Input.GetAxis(playerNum+" Horizontal") + Input.GetAxis(playerNum+" Horizontal Axis")),-1,1)) * speed * playerCharge.speedMultiplier; // bad hack but it works well enough
+            //horizontalMove = Input.GetAxis(playerNum+" Horizontal Axis") * speed * playerCharge.speedMultiplier;
+            if (Input.GetButtonDown(playerNum+" Jump") || Input.GetAxis(playerNum+ " Vertical") >= 0.5f | Input.GetAxis(playerNum+ " Vertical Axis") >= 0.5f)
             {
                 jump = true;
-
             }
 
-            if (Input.GetAxisRaw(playerNum+" Vertical") <= -0.5f)
+            if (Input.GetAxis(playerNum+" Vertical") <= -0.5f | Input.GetAxis(playerNum+ " Vertical Axis") <= -0.5f)
             {
                 crouch = true;
             }
 
-            if (Input.GetButtonDown(playerNum+" Button 1"))
+            if (Input.GetButtonDown(playerNum+" Punch"))
             {
                 punch = true;
                 playerCharge.charge -= spendCharge;
             }
 
-            if (Input.GetButtonDown(playerNum+" Button 2"))
+            if (Input.GetButtonDown(playerNum+" Kick"))
             {
                 kick = true;
                 playerCharge.charge -= spendCharge;
             }
 
-            if (Input.GetAxisRaw(playerNum+" Button 3") > 0.1)
+            if (Input.GetAxisRaw(playerNum+" Block") > 0.1)
             {
                 block = true;
             }

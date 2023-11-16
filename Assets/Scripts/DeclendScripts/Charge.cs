@@ -137,9 +137,10 @@ public class Charge : MonoBehaviour
         {
             tempTime += Time.deltaTime;
 
-            if (Input.GetButtonDown(gameObject.GetComponent<CharacterMovement>().playerNum + " Vertical"))
+            if (Input.GetAxis(gameObject.GetComponent<CharacterMovement>().playerNum + " Vertical") <= -0.5f)
             {
                 timer.StartTimer();
+                //Debug.Log("TIMER");
 
             }
 
