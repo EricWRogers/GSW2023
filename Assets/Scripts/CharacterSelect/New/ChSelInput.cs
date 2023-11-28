@@ -98,6 +98,15 @@ public class ChSelInput : MonoBehaviour
         }
         if (Player2HorizontalAxis == 0.0f || Input.GetAxis("Player 2 Horizontal Axis") == 0.0f)
         {
+            Player1HorizontalAxisInUse = false;
+        }
+        if (Player1VerticalAxis == 0.0f && Input.GetAxis("Player 1 Vertical Axis") == 0.0f)
+        {
+            Player1VerticalAxisInUse = false;
+        }
+
+        if (Player2HorizontalAxis == 0.0f && Input.GetAxis("Player 2 Horizontal Axis") == 0.0f)
+        {
             Player2HorizontalAxisInUse = false;
         }
         if (Player2VerticalAxis == 0.0f || Input.GetAxis("Player 2 Vertical Axis") == 0.0f)

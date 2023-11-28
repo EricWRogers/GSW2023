@@ -36,11 +36,11 @@ public class ChEventScript : MonoBehaviour
     {
         switch(input)
         {
-            case "Down":
-                break;
-            case "Up":
+            case "Left":
                 break;
             case "Right":
+                break;
+            case "Up":
                 if (player1ColorInt >= (charColorListNum))
                 {
                     player1ColorInt = (charColorListNum - charColorListNum);
@@ -50,7 +50,7 @@ public class ChEventScript : MonoBehaviour
                     player1ColorInt ++;
                 }
                 break;
-            case "Left":
+            case "Down":
                 if (player1ColorInt <= 0)
                 {
                     player1ColorInt = (charColorListNum);
@@ -61,11 +61,11 @@ public class ChEventScript : MonoBehaviour
                 }
                 break;
         }
-        if(player1ColorInt == player2ColorInt && input == "Right")
+        if(player1ColorInt == player2ColorInt && input == "Up")
         {
             player1ColorInt = player2ColorInt + 1;
         }
-        else if (player1ColorInt == player2ColorInt && input == "Left")
+        else if (player1ColorInt == player2ColorInt && input == "Down")
         {
             player1ColorInt = player2ColorInt - 1;
         }
@@ -75,11 +75,11 @@ public class ChEventScript : MonoBehaviour
     {
         switch(input)
         {
-            case "Down":
-                break;
-            case "Up":
+            case "Left":
                 break;
             case "Right":
+                break;
+            case "Up":
                 if (player2ColorInt >= (charColorListNum))
                 {
                     player2ColorInt = (charColorListNum - charColorListNum);
@@ -89,7 +89,7 @@ public class ChEventScript : MonoBehaviour
                     player2ColorInt ++;
                 }
                 break;
-            case "Left":
+            case "Down":
                 if (player2ColorInt <= 0)
                 {
                     player2ColorInt = (charColorListNum);
@@ -100,11 +100,11 @@ public class ChEventScript : MonoBehaviour
                 }
                 break;
         }
-        if(player1ColorInt == player2ColorInt && input == "Right")
+        if(player1ColorInt == player2ColorInt && input == "Up")
         {
             player2ColorInt = player1ColorInt + 1;
         }
-        else if (player1ColorInt == player2ColorInt && input == "Left")
+        else if (player1ColorInt == player2ColorInt && input == "Down")
         {
             player2ColorInt = player1ColorInt - 1;
         }
