@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cafe70c1e25ebc4888ec162fedb81b5, type: 3}
   m_Name: VCR
   m_EditorClassIdentifier: 
-  speed: 0
-  characterName: VCR
+  speed: 60
+  characterName: Vee
   characterSprite: {fileID: 0}
   newColor: {r: 0, g: 0, b: 0, a: 0}
   colorList:
@@ -21,4 +21,4 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
-  animations: {fileID: 0}
+  animations: {fileID: 9100000, guid: 7a9f965f1ca4e3d41a43dd1dea1e16f1, type: 2}
