@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4c70f39b0b3a344bb33a8abcb203ba1
+guid: 19b4589ad6d468e4db2fba100c3ea9cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,49 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Charge_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 64
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6877fe594cfcab84d9fab89b965abb04
-      internalID: 131618426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charge_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 64
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c4f2a2b559026f4e9a1753ef32fa66e
-      internalID: -800403662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Charge_2
+      name: Low Punch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -166,8 +124,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd07f23968e84194c8470cf30637c81d
-      internalID: -2048523435
+      spriteID: 432937f553946d04ebf9bff46ae5db3c
+      internalID: 214236961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Low Punch_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27b9e463a424634f885f01476d1916f
+      internalID: -239459602
       vertices: []
       indices: 
       edges: []
@@ -183,9 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Charge_0: 131618426
-      Charge_1: -800403662
-      Charge_2: -2048523435
+      Low Punch_0: 214236961
+      Low Punch_1: -239459602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
