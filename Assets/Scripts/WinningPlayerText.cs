@@ -30,7 +30,7 @@ public class WinningPlayerText : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Turn off WinScreen");
+        //Debug.Log("Turn off WinScreen");
         winScreen.SetActive(false);
     }
     void Start()
@@ -56,7 +56,7 @@ public class WinningPlayerText : MonoBehaviour
             else
             {
                 roundManager.p2Wins = p2Wins + 1;
-                SceneManager.LoadSceneAsync("White_Box");
+                SceneManager.LoadSceneAsync("Game_Scene");
             }   
         }
         if (playerTwo.currentHealth == 0)
@@ -73,7 +73,7 @@ public class WinningPlayerText : MonoBehaviour
             else
             {
                 roundManager.p1Wins = p1Wins + 1;
-                SceneManager.LoadSceneAsync("White_Box");
+                SceneManager.LoadSceneAsync("Game_Scene");
             }
         }
         else if(playerTwo.currentHealth != 0 && playerOne.currentHealth != 0 && !gameObject.GetComponent<Pause>().isPaused)
@@ -97,12 +97,12 @@ public class WinningPlayerText : MonoBehaviour
                 else
                 {
                     roundManager.p1Wins = p1Wins + 1;
-                    SceneManager.LoadSceneAsync("White_Box");
+                    SceneManager.LoadSceneAsync("Game_Scene");
                 }
             }
             else if(playerOne.currentHealth == playerTwo.currentHealth)
             {
-                SceneManager.LoadSceneAsync("White_Box");
+                SceneManager.LoadSceneAsync("Game_Scene");
             }
             else
             {
@@ -118,7 +118,7 @@ public class WinningPlayerText : MonoBehaviour
                 else
                 {
                     roundManager.p2Wins = p2Wins + 1;
-                    SceneManager.LoadSceneAsync("White_Box");
+                    SceneManager.LoadSceneAsync("Game_Scene");
                 }
             }
         }

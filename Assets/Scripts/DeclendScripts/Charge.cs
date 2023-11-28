@@ -137,10 +137,10 @@ public class Charge : MonoBehaviour
         {
             tempTime += Time.deltaTime;
 
-            if (Input.GetButtonDown(gameObject.GetComponent<CharacterMovement>().playerNum + " Vertical"))
+            if (gameObject.GetComponent<CharacterMovement>().crouch && timer.timeLeft<=0.0f  )
             {
                 timer.StartTimer();
-
+                Debug.Log("TIMER");
             }
 
             AttackingChargeMutiplier();
