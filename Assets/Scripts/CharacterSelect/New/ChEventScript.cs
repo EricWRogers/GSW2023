@@ -25,9 +25,14 @@ public class ChEventScript : MonoBehaviour
     }
     void Update()
     {  
-        if(player1ColorInt == player2ColorInt && player1SelectionInt == player2SelectionInt) //what was this was for again
+        if(player1ColorInt == player2ColorInt && player1SelectionInt == player2SelectionInt)
         {
-            
+            if(player1ColorInt == 0) { player2ColorInt = 1; }
+            if (player1ColorInt == 1) { player2ColorInt = 2; }
+            if (player1ColorInt == 2) { player2ColorInt = 3; }
+            if (player1ColorInt == 3) { player2ColorInt = 0; }
+            VariableUpdate();
+
         }
         if (GameManager.Instance.MatchWinner == "Player 1")
         {
