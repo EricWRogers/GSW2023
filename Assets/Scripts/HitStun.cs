@@ -7,7 +7,7 @@ public class HitStun : MonoBehaviour
     public CharacterMovement movement;
     public bool isStun = false;
     public bool gotHit = false;
-    public float timeStunned = 2.0f;
+    public float timeStunned = 1.0f;
     private float timeStun;
     
     // Start is called before the first frame update

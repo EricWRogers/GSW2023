@@ -60,28 +60,28 @@ public class ChSelInput : MonoBehaviour
         {
             if(!Player2HorizontalAxisInUse)
             {
-                if(Player2HorizontalAxis >= 0.1f)
+                if(Player2HorizontalAxis >= 0.1f || Input.GetAxis("Player 2 Horizontal Axis") >= 0.1f)
                 {
                     eventScript.P2Input("Right");
                     Player2HorizontalAxisInUse = true;
                 }
-                else if (Player2HorizontalAxis <= -0.1f)
+                else if (Player2HorizontalAxis <= -0.1f || Input.GetAxis("Player 2 Horizontal Axis") <= -0.1f)
                 {
                     eventScript.P2Input("Left");
                     Player2HorizontalAxisInUse = true;
                 }
             }
         }
-        if (Player2VerticalAxis != 0.0f)
+        if (Player2VerticalAxis != 0.0f || Input.GetAxis("Player 2 Vertical Axis") != 0.0f)
         {
             if(!Player2VerticalAxisInUse)
             {
-                if(Player2VerticalAxis >= 0.1f)
+                if(Player2VerticalAxis >= 0.1f || Input.GetAxis("Player 2 Vertical Axis") >= 0.1f)
                 {
                     eventScript.P2Input("Up");
                     Player2VerticalAxisInUse = true;
                 }
-                else if (Player2VerticalAxis <= -0.1f)
+                else if (Player2VerticalAxis <= -0.1f || Input.GetAxis("Player 2 Vertical Axis") <= -0.1f)
                 {
                     eventScript.P2Input("Down");
                     Player2VerticalAxisInUse = true;
