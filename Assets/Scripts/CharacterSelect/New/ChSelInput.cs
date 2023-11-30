@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //move this outta here soon
 
 public class ChSelInput : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class ChSelInput : MonoBehaviour
     bool Player1VerticalAxisInUse = false;
     bool Player2HorizontalAxisInUse = false;
     bool Player2VerticalAxisInUse = false;
+    bool buttonPressed = false;
 
     void Start()
     {
@@ -105,11 +105,13 @@ public class ChSelInput : MonoBehaviour
         {
             Player2VerticalAxisInUse = false;
         }
-
-        if (Input.GetButtonDown("Space Bar") || Input.GetButtonDown("Start"))
+        
+        if ((Input.GetButtonDown("Space Bar") || Input.GetButtonDown("Start")) && !buttonPressed)
         {
-            SceneManager.LoadSceneAsync("Game_Scene");
+            StartCoroutine(eventScript.StartTimer(1.0f));
+            buttonPressed = true; // just to prevent start spam, only need to press it once
         }
+
     }
     void FixedUpdate()
     {
