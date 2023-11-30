@@ -16,6 +16,7 @@ public class CharacterMovement : CharacterControllerXA
         public float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
+        public bool freeze;
 
         public bool punch;
         public bool kick;
@@ -50,7 +51,9 @@ public class CharacterMovement : CharacterControllerXA
 
             if (Input.GetButtonDown(playerNum+" Punch"))
             {
+                
                 punch = true;
+                
                 playerCharge.charge -= spendCharge;
             }
 
@@ -113,6 +116,15 @@ public class CharacterMovement : CharacterControllerXA
                 punch = false;
                 block = false;
             }
+            if (freeze == true)
+            {
+            horizontalMove = 0;
+           
+            jump = false;
+        }
+            
+           
+            
         }
 
         void FixedUpdate()
@@ -128,6 +140,10 @@ public class CharacterMovement : CharacterControllerXA
             punch = false;
             kick = false;
             block = false;
+
+           
+
+         
         }
 
         public void StunnedisOver()
