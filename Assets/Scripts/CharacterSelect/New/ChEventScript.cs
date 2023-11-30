@@ -12,6 +12,8 @@ public class ChEventScript : MonoBehaviour
     public int player2SelectionInt;
     public int player2ColorInt = 0;
     public List<Character> charList;
+    public GameObject trophyP1;
+    public GameObject trophyP2;
     int charListNum;
     int charColorListNum = 3; //4 possible colors, so (list - 1)
     void Start()
@@ -23,96 +25,30 @@ public class ChEventScript : MonoBehaviour
     }
     void Update()
     {  
-        if(player1ColorInt == player2ColorInt && player1SelectionInt == player2SelectionInt)
+        if(player1ColorInt == player2ColorInt && player1SelectionInt == player2SelectionInt) //what was this was for again
         {
             
         }
-
+        if (GameManager.Instance.MatchWinner == "Player 1")
+        {
+            trophyP1.SetActive(true);
+            trophyP2.SetActive(false);
+        }
+        if (GameManager.Instance.MatchWinner == "Player 2")
+        {
+            trophyP1.SetActive(false);
+            trophyP2.SetActive(true);
+        }
+        if (GameManager.Instance.MatchWinner != "Player 1" && GameManager.Instance.MatchWinner != "Player 2")
+        {
+            trophyP1.SetActive(false);
+            trophyP2.SetActive(false);
+        }
 
 
 
     }
     public void P1Input(string input)
-    {
-        switch(input)
-        {
-            case "Down":
-                break;
-            case "Up":
-                break;
-            case "Right":
-                if (player1ColorInt >= (charColorListNum))
-                {
-                    player1ColorInt = (charColorListNum - charColorListNum);
-                }
-                else if (player1ColorInt <= (charColorListNum))
-                {
-                    player1ColorInt ++;
-                }
-                break;
-            case "Left":
-                if (player1ColorInt <= 0)
-                {
-                    player1ColorInt = (charColorListNum);
-                }
-                else if (player1ColorInt <= (charColorListNum))
-                {
-                    player1ColorInt = player1ColorInt - 1;
-                }
-                break;
-        }
-        if(player1ColorInt == player2ColorInt && input == "Right")
-        {
-            player1ColorInt = player2ColorInt + 1;
-        }
-        else if (player1ColorInt == player2ColorInt && input == "Left")
-        {
-            player1ColorInt = player2ColorInt - 1;
-        }
-        VariableUpdate();
-    }
-    public void P2Input(string input)
-    {
-        switch(input)
-        {
-            case "Down":
-                break;
-            case "Up":
-                break;
-            case "Right":
-                if (player2ColorInt >= (charColorListNum))
-                {
-                    player2ColorInt = (charColorListNum - charColorListNum);
-                }
-                else if (player2ColorInt <= (charColorListNum))
-                {
-                    player2ColorInt ++;
-                }
-                break;
-            case "Left":
-                if (player2ColorInt <= 0)
-                {
-                    player2ColorInt = (charColorListNum);
-                }
-                else if (player2ColorInt <= (charColorListNum))
-                {
-                    player2ColorInt = player2ColorInt - 1;
-                }
-                break;
-        }
-        if(player1ColorInt == player2ColorInt && input == "Right")
-        {
-            player2ColorInt = player1ColorInt + 1;
-        }
-        else if (player1ColorInt == player2ColorInt && input == "Left")
-        {
-            player2ColorInt = player1ColorInt - 1;
-        }
-        VariableUpdate();
-        
-               
-    }
-    /*public void P1Input(string input) //FOR THE PUBLIC PLAYTEST, JUST CHECK LEFT AND RIGHT TO CHANGE COLORS, RATHER THAN UP/DOWN
     {
         switch(input)
         {
@@ -122,7 +58,7 @@ public class ChEventScript : MonoBehaviour
                 {
                     player1SelectionInt = (charListNum - 1);
                 }
-                else if (player1SelectionInt <= (charListNum -1))
+                else if (player1SelectionInt <= (charListNum - 1))
                 {
                     player1SelectionInt = player1SelectionInt - 1;
                 }
@@ -136,7 +72,7 @@ public class ChEventScript : MonoBehaviour
                 }
                 else if (player1SelectionInt <= (charListNum - 1))
                 {
-                    player1SelectionInt ++;
+                    player1SelectionInt++;
                 }
                 player1ColorInt = 0;
                 break;
@@ -149,7 +85,6 @@ public class ChEventScript : MonoBehaviour
                 {
                     player1ColorInt ++;
                 }
-
                 break;
             case "Down":
                 if (player1ColorInt <= 0)
@@ -162,7 +97,15 @@ public class ChEventScript : MonoBehaviour
                 }
                 break;
         }
-        
+        if(player1ColorInt == player2ColorInt && input == "Up")
+        {
+            player1ColorInt = player2ColorInt + 1;
+        }
+        else if (player1ColorInt == player2ColorInt && input == "Down")
+        {
+            player1ColorInt = player2ColorInt - 1;
+        }
+        //SOUND HERE (REMOVE THIS TEXT AND PUT SOUND CODE)
         VariableUpdate();
     }
     public void P2Input(string input)
@@ -175,7 +118,7 @@ public class ChEventScript : MonoBehaviour
                 {
                     player2SelectionInt = (charListNum - 1);
                 }
-                else if (player2SelectionInt <= (charListNum -1))
+                else if (player2SelectionInt <= (charListNum - 1))
                 {
                     player2SelectionInt = player2SelectionInt - 1;
                 }
@@ -189,7 +132,7 @@ public class ChEventScript : MonoBehaviour
                 }
                 else if (player2SelectionInt <= (charListNum - 1))
                 {
-                    player2SelectionInt ++;
+                    player2SelectionInt++;
                 }
                 player2ColorInt = 0;
                 break;
@@ -202,7 +145,6 @@ public class ChEventScript : MonoBehaviour
                 {
                     player2ColorInt ++;
                 }
-
                 break;
             case "Down":
                 if (player2ColorInt <= 0)
@@ -215,10 +157,25 @@ public class ChEventScript : MonoBehaviour
                 }
                 break;
         }
+        if(player1ColorInt == player2ColorInt && input == "Up")
+        {
+            player2ColorInt = player1ColorInt + 1;
+        }
+        else if (player1ColorInt == player2ColorInt && input == "Down")
+        {
+            player2ColorInt = player1ColorInt - 1;
+        }
+        //SOUND HERE (REMOVE THIS TEXT AND PUT SOUND CODE)
         VariableUpdate();
         
                
-    }*/
+    }
+    public IEnumerator StartTimer(float duration)
+    {
+        //SOUND HERE (REMOVE THIS TEXT AND PUT SOUND CODE)
+        yield return new WaitForSeconds(duration); //wait for however many seconds specified, 1 is ok
+        GameManager.Instance.ChangeScene("Game_Scene");
+    }
     void VariableUpdate()
     {
         player1Selection.GetComponent<Image>().sprite = charList[player1SelectionInt].characterSprite;
