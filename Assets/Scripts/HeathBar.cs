@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class HealthBar : MonoBehaviour
 {
@@ -13,6 +13,46 @@ public class HealthBar : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public float colorHue = 0.0f;
+
+    public float timeForDamage = 2.0f;
+    public float amountOfDamage = 12.5f;
+    public float counter = 0.0f;
+
+    [System.Serializable]
+    public class DamageSnapShot
+    {
+        public float pointInTime;
+        public float damageTaken;
+    }
+
+    public List<DamageSnapShot> damageTaken = new List<DamageSnapShot>();
+
+    private CharacterMovement iframe;
+
+    private void Start()
+    {
+        SetMaxHealth(maxHealth);
+        colorHue = ((currentHealth / 100) / 3);
+        sliderfill.color = Color.HSVToRGB(colorHue, 1, 1);
+
+        iframe = GetComponent<CharacterMovement>();
+    }
+
+    void Update()
+    {
+        counter += Time.deltaTime;
+
+        if (GetTotalDamage() >= amountOfDamage)
+        {
+            iframe.PlayIframe();
+            damageTaken.Clear();
+        }
+
+        if (iframe.punch == true || iframe.kick == true)
+        {
+            iframe.StopIframe();
+        }
+    }
 
     public void SetMaxHealth(float health)
     {
@@ -43,23 +83,52 @@ public class HealthBar : MonoBehaviour
             Debug.Log("Dead");
             //SceneManager.LoadSceneAsync("XanderTestScene");
         }
+
+        DamageSnapShot dss = new DamageSnapShot();
+        dss.damageTaken = damage;
+        dss.pointInTime = counter;
+        damageTaken.Add(dss);
     }
 
-    private void Start()
+    private float GetTotalDamage()
     {
-        SetMaxHealth(maxHealth);
-        colorHue = ((currentHealth / 100) / 3) ; 
-        sliderfill.color = Color.HSVToRGB(colorHue,1,1);
+        float totalDamage = 0;
+
+        for (int i = 0; i < damageTaken.Count;)
+        {
+            if (timeForDamage < counter - damageTaken[i].pointInTime)
+            {
+                damageTaken.RemoveAt(i);
+            }
+            else
+            {
+                i++;
+            }
+        }
+
+        foreach (DamageSnapShot ds in damageTaken)
+        {
+            totalDamage += ds.damageTaken;
+        }
+        return totalDamage;
     }
 
-
-
-    void Update()
+    /*public void DamageThreshold()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-            //TakeDamage(20);
-           // Debug.Log("take damge");
-       // }
-    }
+        float preHealth = currentHealth;
+
+        if (timeLeftDuration <= 0)
+        {
+            if (preHealth - currentHealth >= damageThreshold)
+            {
+                iframe.PlayIframe();
+                Debug.Log("Iframe has Started");
+            }
+            else
+            {
+                ResetTime();
+                Debug.Log("Damage Threshold was not reached");
+            }
+        }
+    }*/
 }
