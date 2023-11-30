@@ -1393,6 +1393,7 @@ MonoBehaviour:
   spendCharge: 5
   horizontalMove: 0
   crouch: 0
+  freeze: 0
   punch: 0
   kick: 0
   block: 0
@@ -5542,6 +5543,7 @@ MonoBehaviour:
   spendCharge: 5
   horizontalMove: 0
   crouch: 0
+  freeze: 0
   punch: 0
   kick: 0
   block: 0

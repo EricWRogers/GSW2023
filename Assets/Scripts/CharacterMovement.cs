@@ -54,13 +54,13 @@ public class CharacterMovement : CharacterControllerXA
                 
                 punch = true;
                 
-                playerCharge.charge -= spendCharge;
+                //playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetButtonDown(playerNum+" Kick"))
             {
                 kick = true;
-                playerCharge.charge -= spendCharge;
+                //playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetAxisRaw(playerNum+" Block") > 0.1)
