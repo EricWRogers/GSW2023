@@ -24,6 +24,15 @@ public class CharacterMovement : CharacterControllerXA
         //public Timer timer;
         public bool gotHit = false;
 
+        public Color flashColor;
+        public Color regularColor;
+        public float flashDuration;
+        public int numberOfFlashes = 3;
+        public Collider2D playersCollider;
+        public Collider2D hurtCollider;
+        public SpriteRenderer playerSprite;
+
+
         public SpriteRenderer spriteRenderer;
 
         public Rigidbody2D _rb2d;
@@ -134,5 +143,31 @@ public class CharacterMovement : CharacterControllerXA
         {
             gotHit = false;
         }
+
+        public void PlayIframe()
+        {
+            StartCoroutine(Iframe());
+        }
+
+        public void StopIframe()
+        {
+            StopCoroutine(Iframe());
+        }
+
+        private IEnumerator Iframe()
+        {
+            int temp = 0;
+            playersCollider.enabled = true;
+            hurtCollider.enabled = false;
+            while(temp < numberOfFlashes)
+            {
+                playerSprite.color = flashColor;
+                yield return new WaitForSeconds(flashDuration);
+                temp++;
+            }
+            playerSprite.color = regularColor;
+            playersCollider.enabled = false;
+            hurtCollider.enabled = true;
+        }  
 
 }
