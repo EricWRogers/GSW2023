@@ -16,6 +16,7 @@ public class CharacterMovement : CharacterControllerXA
         public float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
+        public bool freeze;
 
         public bool punch;
         public bool kick;
@@ -23,6 +24,15 @@ public class CharacterMovement : CharacterControllerXA
 
         //public Timer timer;
         public bool gotHit = false;
+
+        public Color flashColor;
+        public Color regularColor;
+        public float flashDuration;
+        public int numberOfFlashes = 3;
+        public Collider2D playersCollider;
+        public Collider2D hurtCollider;
+        public SpriteRenderer playerSprite;
+
 
         public SpriteRenderer spriteRenderer;
 
@@ -50,7 +60,9 @@ public class CharacterMovement : CharacterControllerXA
 
             if (Input.GetButtonDown(playerNum+" Punch"))
             {
+                
                 punch = true;
+                
                 playerCharge.charge -= spendCharge;
             }
 
@@ -113,6 +125,15 @@ public class CharacterMovement : CharacterControllerXA
                 punch = false;
                 block = false;
             }
+            if (freeze == true)
+            {
+            horizontalMove = 0;
+           
+            jump = false;
+        }
+            
+           
+            
         }
 
         void FixedUpdate()
@@ -128,11 +149,41 @@ public class CharacterMovement : CharacterControllerXA
             punch = false;
             kick = false;
             block = false;
+
+           
+
+         
         }
 
         public void StunnedisOver()
         {
             gotHit = false;
         }
+
+        public void PlayIframe()
+        {
+            StartCoroutine(Iframe());
+        }
+
+        public void StopIframe()
+        {
+            StopCoroutine(Iframe());
+        }
+
+        private IEnumerator Iframe()
+        {
+            int temp = 0;
+            playersCollider.enabled = true;
+            hurtCollider.enabled = false;
+            while(temp < numberOfFlashes)
+            {
+                playerSprite.color = flashColor;
+                yield return new WaitForSeconds(flashDuration);
+                temp++;
+            }
+            playerSprite.color = regularColor;
+            playersCollider.enabled = false;
+            hurtCollider.enabled = true;
+        }  
 
 }
