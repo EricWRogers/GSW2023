@@ -27,8 +27,7 @@ public class CharacterMovement : CharacterControllerXA
 
         public Color flashColor;
         public Color regularColor;
-        public float flashDuration;
-        public int numberOfFlashes = 3;
+        public float iframeDuration;
         public Collider2D playersCollider;
         public Collider2D hurtCollider;
         public SpriteRenderer playerSprite;
@@ -63,13 +62,13 @@ public class CharacterMovement : CharacterControllerXA
                 
                 punch = true;
                 
-                playerCharge.charge -= spendCharge;
+                //playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetButtonDown(playerNum+" Kick"))
             {
                 kick = true;
-                playerCharge.charge -= spendCharge;
+                //playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetAxisRaw(playerNum+" Block") > 0.1)
@@ -172,15 +171,10 @@ public class CharacterMovement : CharacterControllerXA
 
         private IEnumerator Iframe()
         {
-            int temp = 0;
             playersCollider.enabled = true;
             hurtCollider.enabled = false;
-            while(temp < numberOfFlashes)
-            {
-                playerSprite.color = flashColor;
-                yield return new WaitForSeconds(flashDuration);
-                temp++;
-            }
+            playerSprite.color = flashColor;
+            yield return new WaitForSeconds(iframeDuration);
             playerSprite.color = regularColor;
             playersCollider.enabled = false;
             hurtCollider.enabled = true;

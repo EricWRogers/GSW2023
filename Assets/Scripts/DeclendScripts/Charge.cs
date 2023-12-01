@@ -114,14 +114,9 @@ public class Charge : MonoBehaviour
 
 
     }
-    void chargeBurst()
+    void chargeSubtract(float subtract)
     {
-        float burst = 25.0f;
-        if (Input.GetKeyDown(KeyCode.Space) && charge > 0)
-        {
-            SetCharge(charge - burst);
-
-        }
+            SetCharge(charge - subtract);
     }
         void chargeBump()
         {
@@ -146,13 +141,8 @@ public class Charge : MonoBehaviour
             AttackingChargeMutiplier();
             MovementChargeMutiplier();
             CrouchCharge();
-            //Invoke("CrouchCharge", 3.0f);
             SetCharge(charge);
-            //chargeBurst();
-            //chargeBump();
-            //if(chargeRate > 0){
-            //sprite.color = new Color(1.0f, 1.0f, 0.0f, 1.0f);
-            //}
+ 
 
         }
     }
