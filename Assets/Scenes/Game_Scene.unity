@@ -4944,7 +4944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3345618850506779778, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3407643866326188169, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_text
@@ -5233,7 +5233,7 @@ PrefabInstance:
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: countdown
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 18537524}
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: playerOne
       value: 
