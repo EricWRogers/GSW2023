@@ -1397,6 +1397,7 @@ MonoBehaviour:
   spendCharge: 5
   horizontalMove: 0
   crouch: 0
+  freeze: 0
   punch: 0
   kick: 0
   block: 0
@@ -5160,7 +5161,7 @@ PrefabInstance:
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: countdown
       value: 
-      objectReference: {fileID: 18537524}
+      objectReference: {fileID: 0}
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: playerOne
       value: 
@@ -5557,6 +5558,7 @@ MonoBehaviour:
   spendCharge: 5
   horizontalMove: 0
   crouch: 0
+  freeze: 0
   punch: 0
   kick: 0
   block: 0
