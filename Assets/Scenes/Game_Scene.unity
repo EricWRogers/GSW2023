@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 582754333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53e19e7db6c0aa45a521bb7a1f4e206, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c191e69cec4a464dbbffc7219c16c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2045781805}
@@ -1290,6 +1290,10 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   colorHue: 0
+  timeForDamage: 2
+  amountOfDamage: 12.5
+  counter: 0
+  damageTaken: []
 --- !u!95 &582754335
 Animator:
   serializedVersion: 5
@@ -1397,6 +1401,13 @@ MonoBehaviour:
   kick: 0
   block: 0
   gotHit: 0
+  flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.5
+  numberOfFlashes: 3
+  playersCollider: {fileID: 582754339}
+  hurtCollider: {fileID: 1397570541}
+  playerSprite: {fileID: 582754340}
   spriteRenderer: {fileID: 0}
   _rb2d: {fileID: 0}
 --- !u!50 &582754338
@@ -5489,7 +5500,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2116307575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53e19e7db6c0aa45a521bb7a1f4e206, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c191e69cec4a464dbbffc7219c16c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2045781808}
@@ -5497,6 +5508,10 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   colorHue: 0
+  timeForDamage: 2
+  amountOfDamage: 12.5
+  counter: 0
+  damageTaken: []
 --- !u!114 &2116307577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5546,6 +5561,13 @@ MonoBehaviour:
   kick: 0
   block: 0
   gotHit: 0
+  flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+  regularColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.5
+  numberOfFlashes: 3
+  playersCollider: {fileID: 2116307582}
+  hurtCollider: {fileID: 1805997374}
+  playerSprite: {fileID: 2116307583}
   spriteRenderer: {fileID: 0}
   _rb2d: {fileID: 0}
 --- !u!114 &2116307578
