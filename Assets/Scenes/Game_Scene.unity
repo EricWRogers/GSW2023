@@ -1305,7 +1305,7 @@ Animator:
   m_GameObject: {fileID: 582754333}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a9f965f1ca4e3d41a43dd1dea1e16f1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1398,6 +1398,7 @@ MonoBehaviour:
   spendCharge: 5
   horizontalMove: 0
   crouch: 0
+  freeze: 0
   punch: 0
   kick: 0
   block: 0
@@ -1638,7 +1639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdff43188a635e45b6b82d7e5831b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 518404004c1e49843ad14861410bb82a, type: 2}
+  character: {fileID: 11400000, guid: cd8e995184a66bc4199e2d1013d38275, type: 2}
 --- !u!1 &598400527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4874,6 +4875,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 317135156531073480, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 462148269583127025, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 462148269583127025, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.77015
+      objectReference: {fileID: 0}
     - target: {fileID: 1003673398111989573, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_Colors.m_PressedColor.a
       value: 0.38431373
@@ -4929,6 +4942,50 @@ PrefabInstance:
     - target: {fileID: 2871060185627846337, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345618850506779778, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407643866326188169, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_text
+      value: Rematch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407643866326188169, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_fontSize
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407643866326188169, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407643866326188169, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6506984347709103310, guid: da55f513dcc2bc646ba796b942a0d294, type: 2}
+    - target: {fileID: 3407643866326188169, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554296843163008278, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554296843163008278, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554296843163008278, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6506984347709103310, guid: da55f513dcc2bc646ba796b942a0d294, type: 2}
+    - target: {fileID: 3554296843163008278, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600382125908247496, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 3890595425096923427, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_Pivot.x
@@ -5025,6 +5082,14 @@ PrefabInstance:
     - target: {fileID: 4330394384595310571, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_Colors.m_NormalColor.r
       value: 0.49803925
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364717905037415680, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6506984347709103310, guid: da55f513dcc2bc646ba796b942a0d294, type: 2}
+    - target: {fileID: 4364717905037415680, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4559253101753628540, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5142,6 +5207,14 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.7843138
       objectReference: {fileID: 0}
+    - target: {fileID: 6405677043034714675, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6506984347709103310, guid: da55f513dcc2bc646ba796b942a0d294, type: 2}
+    - target: {fileID: 6405677043034714675, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6990024672118012341, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 173
@@ -5161,7 +5234,7 @@ PrefabInstance:
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: countdown
       value: 
-      objectReference: {fileID: 18537524}
+      objectReference: {fileID: 0}
     - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: playerOne
       value: 
@@ -5558,6 +5631,7 @@ MonoBehaviour:
   spendCharge: 5
   horizontalMove: 0
   crouch: 0
+  freeze: 0
   punch: 0
   kick: 0
   block: 0
@@ -5617,7 +5691,7 @@ Animator:
   m_GameObject: {fileID: 2116307575}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f27a8e4298be9b04abe26e2cb08fae41, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a9f965f1ca4e3d41a43dd1dea1e16f1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5733,7 +5807,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 65bf42af2916f41448991afb65015b9f, type: 2}
+  - {fileID: -876546973899608171, guid: 9e0d85a359d2fd2daaf90bfe7cfcb4e4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
