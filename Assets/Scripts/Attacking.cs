@@ -19,6 +19,7 @@ public class Attacking : MonoBehaviour
 
     public float knockbackNumber = 5.0f;
     public float damageNumber = 0.0f;
+    public float hitStunDuration;
 
     void Awake()
     {
@@ -40,7 +41,7 @@ public class Attacking : MonoBehaviour
                 //targetPlayer.PlayIframe();
                 playerHealth.TakeDamage(damageNumber * playerCharge.chargeMultiplier);
                 targetPlayer.gotHit = true;
-                timer.StartTimer();
+                timer.StartTimer(hitStunDuration);
                 //Debug.Log("Start Time");
             }
         }

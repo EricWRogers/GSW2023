@@ -401,6 +401,7 @@ MonoBehaviour:
   hitCollider: {fileID: 165821479}
   knockbackNumber: 5
   damageNumber: 8
+  hitStunDuration: 0
 --- !u!70 &165821482
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1403,8 +1404,7 @@ MonoBehaviour:
   gotHit: 0
   flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
-  flashDuration: 0.5
-  numberOfFlashes: 3
+  iframeDuration: 1
   playersCollider: {fileID: 582754339}
   hurtCollider: {fileID: 1397570541}
   playerSprite: {fileID: 582754340}
@@ -2596,6 +2596,7 @@ MonoBehaviour:
   hitCollider: {fileID: 1005424222}
   knockbackNumber: 5
   damageNumber: 8
+  hitStunDuration: 0
 --- !u!70 &1005424225
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5563,8 +5564,7 @@ MonoBehaviour:
   gotHit: 0
   flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
-  flashDuration: 0.5
-  numberOfFlashes: 3
+  iframeDuration: 1
   playersCollider: {fileID: 2116307582}
   hurtCollider: {fileID: 1805997374}
   playerSprite: {fileID: 2116307583}
