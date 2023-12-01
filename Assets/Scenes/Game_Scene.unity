@@ -1405,7 +1405,7 @@ MonoBehaviour:
   gotHit: 0
   flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
-  iframeDuration: 1
+  iframeDuration: 1.5
   playersCollider: {fileID: 582754339}
   hurtCollider: {fileID: 1397570541}
   playerSprite: {fileID: 582754340}
@@ -5638,7 +5638,7 @@ MonoBehaviour:
   gotHit: 0
   flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
-  iframeDuration: 1
+  iframeDuration: 1.5
   playersCollider: {fileID: 2116307582}
   hurtCollider: {fileID: 1805997374}
   playerSprite: {fileID: 2116307583}
