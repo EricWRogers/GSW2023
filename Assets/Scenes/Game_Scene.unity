@@ -1405,7 +1405,7 @@ MonoBehaviour:
   gotHit: 0
   flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
-  iframeDuration: 1
+  iframeDuration: 1.5
   playersCollider: {fileID: 582754339}
   hurtCollider: {fileID: 1397570541}
   playerSprite: {fileID: 582754340}
@@ -5638,7 +5638,7 @@ MonoBehaviour:
   gotHit: 0
   flashColor: {r: 1, g: 1, b: 1, a: 0.5019608}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
-  iframeDuration: 1
+  iframeDuration: 1.5
   playersCollider: {fileID: 2116307582}
   hurtCollider: {fileID: 1805997374}
   playerSprite: {fileID: 2116307583}
@@ -5942,7 +5942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdff43188a635e45b6b82d7e5831b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
+  character: {fileID: 11400000, guid: cd8e995184a66bc4199e2d1013d38275, type: 2}
 --- !u!1 &2143636390
 GameObject:
   m_ObjectHideFlags: 0
