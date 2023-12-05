@@ -14,13 +14,14 @@ public class ChEventScript : MonoBehaviour
     public List<Character> charList;
     public GameObject trophyP1;
     public GameObject trophyP2;
-    int charListNum;
+    int m_charListNum;
     int charColorListNum = 3; //4 possible colors, so (list - 1)
     void Start()
     {
         player1Selection = GameObject.Find("Player 1 Selection");
         player2Selection = GameObject.Find("Player 2 Selection");
-        charListNum = charList.Count;
+        m_charListNum = charList.Count;
+
         VariableUpdate();
     }
     void Update()
@@ -61,9 +62,9 @@ public class ChEventScript : MonoBehaviour
                 //move down the index by 1, if at minimum, set it to maximum
                 if (player1SelectionInt <= 0)
                 {
-                    player1SelectionInt = (charListNum - 1);
+                    player1SelectionInt = (m_charListNum - 1);
                 }
-                else if (player1SelectionInt <= (charListNum - 1))
+                else if (player1SelectionInt <= (m_charListNum - 1))
                 {
                     player1SelectionInt = player1SelectionInt - 1;
                 }
@@ -71,11 +72,11 @@ public class ChEventScript : MonoBehaviour
                 break;
             case "Right":
                 //move up index by 1, if at max, set to min
-                if (player1SelectionInt >= (charListNum - 1))
+                if (player1SelectionInt >= (m_charListNum - 1))
                 {
-                    player1SelectionInt = (charListNum - charListNum);
+                    player1SelectionInt = (m_charListNum - m_charListNum);
                 }
-                else if (player1SelectionInt <= (charListNum - 1))
+                else if (player1SelectionInt <= (m_charListNum - 1))
                 {
                     player1SelectionInt++;
                 }
@@ -102,11 +103,11 @@ public class ChEventScript : MonoBehaviour
                 }
                 break;
         }
-        if(player1ColorInt == player2ColorInt && input == "Up")
+        if((player1ColorInt == player2ColorInt && player1SelectionInt == player2SelectionInt) && input == "Up")
         {
-            player1ColorInt = player2ColorInt + 1;
+            player1ColorInt = player2ColorInt + 1; //this mess throws an out of range of index error
         }
-        else if (player1ColorInt == player2ColorInt && input == "Down")
+        else if ((player1ColorInt == player2ColorInt && player1SelectionInt == player2SelectionInt) && input == "Down")
         {
             player1ColorInt = player2ColorInt - 1;
         }
@@ -121,9 +122,9 @@ public class ChEventScript : MonoBehaviour
                 //move down the index by 1, if at minimum, set it to maximum
                 if (player2SelectionInt <= 0)
                 {
-                    player2SelectionInt = (charListNum - 1);
+                    player2SelectionInt = (m_charListNum - 1);
                 }
-                else if (player2SelectionInt <= (charListNum - 1))
+                else if (player2SelectionInt <= (m_charListNum - 1))
                 {
                     player2SelectionInt = player2SelectionInt - 1;
                 }
@@ -131,11 +132,11 @@ public class ChEventScript : MonoBehaviour
                 break;
             case "Right":
                 //move up index by 1, if at max, set to min
-                if (player2SelectionInt >= (charListNum - 1))
+                if (player2SelectionInt >= (m_charListNum - 1))
                 {
-                    player2SelectionInt = (charListNum - charListNum);
+                    player2SelectionInt = (m_charListNum - m_charListNum);
                 }
-                else if (player2SelectionInt <= (charListNum - 1))
+                else if (player2SelectionInt <= (m_charListNum - 1))
                 {
                     player2SelectionInt++;
                 }

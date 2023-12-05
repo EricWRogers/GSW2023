@@ -1072,7 +1072,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 449306933, guid: 87ebc46392e525841938f0d555ddd502, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   player2ColorInt: 0
   charList:
   - {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
-  - {fileID: 11400000, guid: cd8e995184a66bc4199e2d1013d38275, type: 2}
+  - {fileID: 11400000, guid: ac0b58b86dfd7fc4086e12eb46e080b4, type: 2}
   trophyP1: {fileID: 800443138}
   trophyP2: {fileID: 505988097}
 --- !u!1 &813048061
@@ -3502,7 +3502,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 449306933, guid: 87ebc46392e525841938f0d555ddd502, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
