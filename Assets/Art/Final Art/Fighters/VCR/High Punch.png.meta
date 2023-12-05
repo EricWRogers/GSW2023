@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4c70f39b0b3a344bb33a8abcb203ba1
+guid: 688407b8f2c740d44a75cfae346a72de
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Charge_0
+      name: High Punch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6877fe594cfcab84d9fab89b965abb04
-      internalID: 131618426
+      spriteID: 7b6bc321a508c974f8d98843e0d86010
+      internalID: 2071960100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charge_1
+      name: High Punch_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c4f2a2b559026f4e9a1753ef32fa66e
-      internalID: -800403662
+      spriteID: e8f7521342513a347ab1133ee8058f69
+      internalID: -1653185049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charge_2
+      name: High Punch_2
       rect:
         serializedVersion: 2
         x: 0
@@ -166,8 +166,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd07f23968e84194c8470cf30637c81d
-      internalID: -2048523435
+      spriteID: 3c51dbfbd5130b24a8f0551fd34b7c7e
+      internalID: -1164866011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: High Punch_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f8a92038736924189b65f6050e8233
+      internalID: 937806902
       vertices: []
       indices: 
       edges: []
@@ -183,9 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Charge_0: 131618426
-      Charge_1: -800403662
-      Charge_2: -2048523435
+      High Punch_0: 2071960100
+      High Punch_1: -1653185049
+      High Punch_2: -1164866011
+      High Punch_3: 937806902
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

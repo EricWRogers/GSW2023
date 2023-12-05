@@ -18,7 +18,8 @@ public class Attacking : MonoBehaviour
 
 
     public float knockbackNumber = 5.0f;
-    [SerializeField] private float damageNumber = 0.0f;
+    public float damageNumber = 0.0f;
+    public float hitStunDuration;
 
     void Awake()
     {
@@ -37,9 +38,10 @@ public class Attacking : MonoBehaviour
                 Vector2 direction = (collision.transform.position - transform.position).normalized;
                 Vector2 knockback = direction * knockbackNumber;
                 targetPlayer._rb2d.AddForce(knockback, ForceMode2D.Impulse);
+                //targetPlayer.PlayIframe();
                 playerHealth.TakeDamage(damageNumber * playerCharge.chargeMultiplier);
                 targetPlayer.gotHit = true;
-                timer.StartTimer();
+                timer.StartTimer(hitStunDuration);
                 //Debug.Log("Start Time");
             }
         }

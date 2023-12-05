@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4c70f39b0b3a344bb33a8abcb203ba1
+guid: 4aeb49152037a0140be9f80d3ff9965f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Charge_0
+      name: Low Kick_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6877fe594cfcab84d9fab89b965abb04
-      internalID: 131618426
+      spriteID: 0989b625031f1d240a2cef0a409df326
+      internalID: 142195268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charge_1
+      name: Low Kick_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c4f2a2b559026f4e9a1753ef32fa66e
-      internalID: -800403662
+      spriteID: 4c271e2c83408a7498c64106ea09f3a5
+      internalID: 2030436351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Charge_2
+      name: Low Kick_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78e184d6a50f2547acdb5e95212f2cb
+      internalID: -817829986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Low Kick_3
       rect:
         serializedVersion: 2
         x: 0
@@ -166,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd07f23968e84194c8470cf30637c81d
-      internalID: -2048523435
+      spriteID: ee06d3d031e5e1f41a26495d6d80411e
+      internalID: -1314221002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Low Kick_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90de5aca633e9554e8d69d99c6be3ef2
+      internalID: 1252087865
       vertices: []
       indices: 
       edges: []
@@ -183,9 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Charge_0: 131618426
-      Charge_1: -800403662
-      Charge_2: -2048523435
+      Low Kick_0: 142195268
+      Low Kick_1: 2030436351
+      Low Kick_2: -817829986
+      Low Kick_3: -1314221002
+      Low Kick_4: 1252087865
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

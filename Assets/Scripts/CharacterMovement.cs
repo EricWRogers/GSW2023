@@ -16,6 +16,7 @@ public class CharacterMovement : CharacterControllerXA
         public float horizontalMove = 0.0f;
         public bool crouch;
         bool jump;
+        public bool freeze;
 
         public bool punch;
         public bool kick;
@@ -23,6 +24,14 @@ public class CharacterMovement : CharacterControllerXA
 
         //public Timer timer;
         public bool gotHit = false;
+
+        public Color flashColor;
+        public Color regularColor;
+        public float iframeDuration;
+        public Collider2D playersCollider;
+        public Collider2D hurtCollider;
+        public SpriteRenderer playerSprite;
+
 
         public SpriteRenderer spriteRenderer;
 
@@ -50,14 +59,16 @@ public class CharacterMovement : CharacterControllerXA
 
             if (Input.GetButtonDown(playerNum+" Punch"))
             {
+                
                 punch = true;
-                playerCharge.charge -= spendCharge;
+                
+                //playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetButtonDown(playerNum+" Kick"))
             {
                 kick = true;
-                playerCharge.charge -= spendCharge;
+                //playerCharge.charge -= spendCharge;
             }
 
             if (Input.GetAxisRaw(playerNum+" Block") > 0.1)
@@ -113,6 +124,15 @@ public class CharacterMovement : CharacterControllerXA
                 punch = false;
                 block = false;
             }
+            if (freeze == true)
+            {
+            horizontalMove = 0;
+           
+            jump = false;
+        }
+            
+           
+            
         }
 
         void FixedUpdate()
@@ -128,11 +148,36 @@ public class CharacterMovement : CharacterControllerXA
             punch = false;
             kick = false;
             block = false;
+
+           
+
+         
         }
 
         public void StunnedisOver()
         {
             gotHit = false;
         }
+
+        public void PlayIframe()
+        {
+            StartCoroutine(Iframe());
+        }
+
+        public void StopIframe()
+        {
+            StopCoroutine(Iframe());
+        }
+
+        private IEnumerator Iframe()
+        {
+            playersCollider.enabled = true;
+            hurtCollider.enabled = false;
+            playerSprite.color = flashColor;
+            yield return new WaitForSeconds(iframeDuration);
+            playerSprite.color = regularColor;
+            playersCollider.enabled = false;
+            hurtCollider.enabled = true;
+        }  
 
 }
