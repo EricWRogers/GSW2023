@@ -22,7 +22,7 @@ public class Countdown : MonoBehaviour
     void Update()
     {
         timeLeft = (int)timer.timeLeft;
-        Debug.Log(timeLeft);
+        //Debug.Log(timeLeft);
         text.text = timeLeft.ToString();
     }
 }
