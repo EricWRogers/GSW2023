@@ -2150,6 +2150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 582754341}
+  roof: 4.25
   yOffset: 3
 --- !u!1 &941885287
 GameObject:
@@ -2527,7 +2528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -6.56, y: 2.2799995}
+  m_AnchoredPosition: {x: -6.78, y: 2.2799995}
   m_SizeDelta: {x: 6.6967, y: 3.7669}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965918151
@@ -2543,6 +2544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2116307580}
+  roof: 4.25
   yOffset: 3
 --- !u!1 &1005424222
 GameObject:
