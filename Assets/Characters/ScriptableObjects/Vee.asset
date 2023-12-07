@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cafe70c1e25ebc4888ec162fedb81b5, type: 3}
   m_Name: Vee
   m_EditorClassIdentifier: 
-  speed: 0
-  characterName: 
-  characterSprite: {fileID: 0}
-  newColor: {r: 0, g: 0, b: 0, a: 0}
-  colorList: []
-  animations: {fileID: 0}
+  speed: 50
+  characterName: Vee
+  characterSprite: {fileID: 1508385410, guid: fcdcc36d6e2a88942980d4695d605551, type: 3}
+  newColor: {r: 1, g: 1, b: 1, a: 0}
+  colorList:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: 0.015138149, b: 1, a: 1}
+  - {r: 0.26364803, g: 1, b: 0, a: 1}
+  animations: {fileID: 9100000, guid: 7a9f965f1ca4e3d41a43dd1dea1e16f1, type: 2}

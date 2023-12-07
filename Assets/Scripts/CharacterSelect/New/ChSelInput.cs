@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //move this outta here soon
 
 public class ChSelInput : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class ChSelInput : MonoBehaviour
     bool Player1VerticalAxisInUse = false;
     bool Player2HorizontalAxisInUse = false;
     bool Player2VerticalAxisInUse = false;
+    bool buttonPressed = false;
 
     void Start()
     {
@@ -55,16 +55,8 @@ public class ChSelInput : MonoBehaviour
                 }
             }
         }
-        if (Player1HorizontalAxis == 0.0f && Input.GetAxis("Player 1 Horizontal Axis") == 0.0f)
-        {
-            Player1HorizontalAxisInUse = false;
-        }
-        if (Player1VerticalAxis == 0.0f && Input.GetAxis("Player 1 Vertical Axis") == 0.0f)
-        {
-            Player1VerticalAxisInUse = false;
-        }
-
-        if (Player2HorizontalAxis != 0.0f || Input.GetAxis("Player 2 Horizontal Axis") != 0.0f)
+        
+        if (Player2HorizontalAxis != 0.0f)
         {
             if(!Player2HorizontalAxisInUse)
             {
@@ -96,7 +88,7 @@ public class ChSelInput : MonoBehaviour
                 }
             }
         }
-        if (Player2HorizontalAxis == 0.0f || Input.GetAxis("Player 2 Horizontal Axis") == 0.0f)
+        if (Player1HorizontalAxis == 0.0f && Input.GetAxis("Player 1 Horizontal Axis") == 0.0f)
         {
             Player1HorizontalAxisInUse = false;
         }
@@ -109,15 +101,17 @@ public class ChSelInput : MonoBehaviour
         {
             Player2HorizontalAxisInUse = false;
         }
-        if (Player2VerticalAxis == 0.0f || Input.GetAxis("Player 2 Vertical Axis") == 0.0f)
+        if (Player2VerticalAxis == 0.0f && Input.GetAxis("Player 2 Vertical Axis") == 0.0f)
         {
             Player2VerticalAxisInUse = false;
         }
-
-        if (Input.GetButtonDown("Space Bar") || Input.GetButtonDown("Start"))
+        
+        if ((Input.GetButtonDown("Space Bar") || Input.GetButtonDown("Start")) && !buttonPressed)
         {
-            SceneManager.LoadSceneAsync("Game_Scene");
+            StartCoroutine(eventScript.StartTimer(1.0f));
+            buttonPressed = true; // just to prevent start spam, only need to press it once
         }
+
     }
     void FixedUpdate()
     {

@@ -10,4 +10,8 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("CharacterSelect");
     }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
