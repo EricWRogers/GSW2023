@@ -189,8 +189,6 @@ public class ChEventScript : MonoBehaviour
         GameManager.Instance.Player1Selection = charList[player1SelectionInt];
         GameManager.Instance.Player1SelectionColor = charList[player1SelectionInt].colorList[player1ColorInt];
 
-
-
         player2Selection.GetComponent<Image>().sprite = charList[player2SelectionInt].characterSprite;
         player2Selection.GetComponent<Image>().color = charList[player2SelectionInt].colorList[player2ColorInt];
         GameManager.Instance.Player2Selection = charList[player2SelectionInt];

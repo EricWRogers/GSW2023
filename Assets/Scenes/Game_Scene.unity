@@ -1639,7 +1639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdff43188a635e45b6b82d7e5831b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: cd8e995184a66bc4199e2d1013d38275, type: 2}
+  character: {fileID: 11400000, guid: ac0b58b86dfd7fc4086e12eb46e080b4, type: 2}
 --- !u!1 &598400527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,8 +4115,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1340820221}
   - component: {fileID: 1340820220}
+  - component: {fileID: 1340820222}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4134,9 +4135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626d2e4af9738b549ac4b2176a17832b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Selection: {fileID: 0}
+  Player1Selection: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
   Player1SelectionColor: {r: 1, g: 1, b: 1, a: 1}
-  Player2Selection: {fileID: 0}
+  Player2Selection: {fileID: 11400000, guid: ac0b58b86dfd7fc4086e12eb46e080b4, type: 2}
   Player2SelectionColor: {r: 1, g: 1, b: 1, a: 1}
   MatchWinner: 
   SelectedStage: Default
@@ -4155,6 +4156,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1340820222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340820219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50071cf8bcf04c8449324b175e4b561c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 2116307575}
+  player2: {fileID: 582754333}
 --- !u!1 &1397570539
 GameObject:
   m_ObjectHideFlags: 0
@@ -5124,6 +5139,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4397210196559071149, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2399902
+      objectReference: {fileID: 0}
     - target: {fileID: 4559253101753628540, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5972,7 +5991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fdff43188a635e45b6b82d7e5831b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: cd8e995184a66bc4199e2d1013d38275, type: 2}
+  character: {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}
 --- !u!1 &2143636390
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,8 +6129,8 @@ SceneRoots:
   - {fileID: 941483946}
   - {fileID: 1162373567}
   - {fileID: 75878566}
-  - {fileID: 582754341}
   - {fileID: 2116307580}
+  - {fileID: 582754341}
   - {fileID: 419386959}
   - {fileID: 337183688}
   - {fileID: 1737646742}

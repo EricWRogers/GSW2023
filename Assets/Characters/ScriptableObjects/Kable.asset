@@ -22,3 +22,4 @@ MonoBehaviour:
   - {r: 0, g: 0.015138149, b: 1, a: 1}
   - {r: 0.26364803, g: 1, b: 0, a: 1}
   animations: {fileID: 9100000, guid: f27a8e4298be9b04abe26e2cb08fae41, type: 2}
+  outlineThickness: 0.25
