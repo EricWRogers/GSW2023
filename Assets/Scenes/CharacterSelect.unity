@@ -1946,7 +1946,7 @@ MonoBehaviour:
   player2Selection: {fileID: 0}
   player1SelectionInt: 0
   player1ColorInt: 0
-  player2SelectionInt: 0
+  player2SelectionInt: 1
   player2ColorInt: 0
   charList:
   - {fileID: 11400000, guid: 983f94094650dd8429ce30c5dadc1269, type: 2}

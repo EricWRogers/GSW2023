@@ -28,13 +28,13 @@ public class AnimScript : MonoBehaviour {
         {
             if(isAnimationStatePlaying(animator,0,"Player1LeftLoop"))
             {
-                GlobalVariables.instance.Player1Selection = "Left Character";
+                //GlobalVariables.instance.Player1Selection = "Left Character";
                 animator.ResetTrigger("LeftTrigger");
                 animator.ResetTrigger("RightTrigger");
             }
             if(isAnimationStatePlaying(animator,0,"Player1RightLoop"))
             {
-                GlobalVariables.instance.Player1Selection = "Right Character";
+                //GlobalVariables.instance.Player1Selection = "Right Character";
                 animator.ResetTrigger("LeftTrigger");
                 animator.ResetTrigger("RightTrigger");
             }
@@ -51,13 +51,13 @@ public class AnimScript : MonoBehaviour {
         {
             if(isAnimationStatePlaying(animator,0,"Player2LeftLoop"))
             {
-                GlobalVariables.instance.Player2Selection = "Left Character";
+                //GlobalVariables.instance.Player2Selection = "Left Character";
                 animator.ResetTrigger("LeftTrigger2");
                 animator.ResetTrigger("RightTrigger2");
             }
             if(isAnimationStatePlaying(animator,0,"Player2RightLoop"))
             {
-                GlobalVariables.instance.Player2Selection = "Right Character";
+                //GlobalVariables.instance.Player2Selection = "Right Character";
                 animator.ResetTrigger("LeftTrigger2");
                 animator.ResetTrigger("RightTrigger2");
             }

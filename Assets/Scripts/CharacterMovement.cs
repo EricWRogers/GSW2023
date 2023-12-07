@@ -40,6 +40,14 @@ public class CharacterMovement : CharacterControllerXA
         void Start()
         {
             _rb2d = GetComponent<Rigidbody2D>();
+            if (name == "Player 1")
+            {
+                regularColor = GameManager.Instance.Player1SelectionColor;
+            }
+            if (name == "Player 2")
+            {
+                regularColor = GameManager.Instance.Player2SelectionColor;
+            }
         }
 
         void Update()
