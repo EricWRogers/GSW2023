@@ -42,11 +42,13 @@ public class CharacterMovement : CharacterControllerXA
             _rb2d = GetComponent<Rigidbody2D>();
             if (name == "Player 1")
             {
-                regularColor = GameManager.Instance.Player1SelectionColor;
+                regularColor = Color.white;
+                playerSprite.color = Color.white;
             }
             if (name == "Player 2")
             {
-                regularColor = GameManager.Instance.Player2SelectionColor;
+                regularColor = Color.white;
+                playerSprite.color = Color.white;
             }
         }
 
