@@ -1754,6 +1754,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &637533373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1962011405768916312, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+  m_PrefabInstance: {fileID: 2045781800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bec8549e10a3947bc4f28d7960b864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &709424962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5301,6 +5312,10 @@ PrefabInstance:
       propertyPath: roundManager
       value: 
       objectReference: {fileID: 11400000, guid: adc459e870be2bc4c8891eb1c89a77dd, type: 2}
+    - target: {fileID: 8312121754107069881, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
+      propertyPath: readyAndFight
+      value: 
+      objectReference: {fileID: 637533373}
     - target: {fileID: 8980194195754272729, guid: 4281f062ee2a236438dd866bfdb1806a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 173.00003
