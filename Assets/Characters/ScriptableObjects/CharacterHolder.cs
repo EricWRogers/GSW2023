@@ -13,12 +13,12 @@ public class CharacterHolder : MonoBehaviour
         if(this.name == "Player 1")
         {
             character = GameManager.Instance.Player1Selection;
-            gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player1SelectionColor;
+            //gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player1SelectionColor;
         }
         if (this.name == "Player 2")
         {
             character = GameManager.Instance.Player2Selection;
-            gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player2SelectionColor;
+            //gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player2SelectionColor;
         }
         gameObject.GetComponent<Animator>().runtimeAnimatorController = character.animations;
         gameObject.GetComponent<CharacterMovement>().speed = character.speed;

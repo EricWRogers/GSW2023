@@ -14,4 +14,14 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void CreditScene()
+    {
+        SceneManager.LoadSceneAsync("Credit_Menu");
+    }
+
+    public void MainMenuScene()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
 }
