@@ -13,11 +13,11 @@ public class MainMenu : MonoBehaviour
 
     public void CreditScene()
     {
-        SceneManager.LoadScene("Credit_Menu");
+        SceneManager.LoadSceneAsync("Credit_Menu");
     }
 
     public void MainMenuScene()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadSceneAsync("Main Menu");
     }
 }
