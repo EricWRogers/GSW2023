@@ -10,10 +10,6 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("CharacterSelect");
     }
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
 
     public void CreditScene()
     {
@@ -22,6 +18,6 @@ public class MainMenu : MonoBehaviour
 
     public void MainMenuScene()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        SceneManager.LoadSceneAsync("Main Menu");
     }
 }
