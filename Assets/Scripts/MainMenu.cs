@@ -18,6 +18,6 @@ public class MainMenu : MonoBehaviour
 
     public void MainMenuScene()
     {
-        SceneManager.LoadSceneAsync("Main Menu");
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 }
