@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ChEventScript : MonoBehaviour
 {
+    public AudioSource audioPlayer;
     public GameObject player1Selection;
     public GameObject player2Selection;
     public int player1SelectionInt;
@@ -111,7 +112,7 @@ public class ChEventScript : MonoBehaviour
         {
             player1ColorInt = player2ColorInt - 1;
         }
-        //SOUND HERE (REMOVE THIS TEXT AND PUT SOUND CODE)
+        audioPlayer.Play();
         VariableUpdate();
     }
     public void P2Input(string input)
@@ -171,7 +172,7 @@ public class ChEventScript : MonoBehaviour
         {
             player2ColorInt = player1ColorInt - 1;
         }
-        //SOUND HERE (REMOVE THIS TEXT AND PUT SOUND CODE)
+        audioPlayer.Play();
         VariableUpdate();
         
                

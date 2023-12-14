@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class ReadyFightText : MonoBehaviour
@@ -10,7 +11,7 @@ public class ReadyFightText : MonoBehaviour
     //play sound 
     private void Awake()
     {
-        Time.timeScale = 0.0f;
+        
         PlayText();
     }
     public void PlayText()
@@ -35,7 +36,7 @@ public class ReadyFightText : MonoBehaviour
     {
         if(!IsInvoking("PlayText"))
         {
-            Time.timeScale = 1.0f;
+            Debug.Log("is over");
         }
     }
 }
