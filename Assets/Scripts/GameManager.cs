@@ -1,8 +1,8 @@
-//USAGE (yes i just moved over the GlobalVariables script, needed to be done anyway)
-//in any script, type '[ScriptName].instance.[VARIABLE NAME HERE]' and set/get what you need. ensure the gamescene you need this in loads with this script inside of an empty gameobject.
+//USAGE -- in any script, type 'GameManager.Instance.[VARIABLE NAME HERE]' and set/get what you need. ensure the gamescene you need this in loads with this script inside of an empty gameobject.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,5 +24,13 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

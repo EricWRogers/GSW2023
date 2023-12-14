@@ -10,4 +10,19 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("CharacterSelect");
     }
+
+    public void CreditScene()
+    {
+        SceneManager.LoadSceneAsync("Credit_Menu");
+    }
+
+    public void MainMenuScene()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

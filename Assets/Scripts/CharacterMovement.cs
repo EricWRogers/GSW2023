@@ -40,6 +40,16 @@ public class CharacterMovement : CharacterControllerXA
         void Start()
         {
             _rb2d = GetComponent<Rigidbody2D>();
+            if (name == "Player 1")
+            {
+                regularColor = Color.white;
+                playerSprite.color = Color.white;
+            }
+            if (name == "Player 2")
+            {
+                regularColor = Color.white;
+                playerSprite.color = Color.white;
+            }
         }
 
         void Update()

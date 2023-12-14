@@ -11,6 +11,7 @@ public class Character : ScriptableObject
         public Color newColor;
         public List<Color> colorList;
         public RuntimeAnimatorController animations;
+        public float outlineThickness;
 
         // public virtual void Active()
         // {

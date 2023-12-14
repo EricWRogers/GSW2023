@@ -1,24 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
     public void Retry()
     {
-        SceneManager.LoadSceneAsync("Game_Scene");
+        GameManager.Instance.ChangeScene("Game_Scene");
     }
 
     public void MainMenu()
     {
-        Debug.Log("Main Menu");
-        SceneManager.LoadScene("Main Menu");
+        GameManager.Instance.ChangeScene("MainMenu");
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit");
-        Application.Quit();
+        GameManager.Instance.ExitGame();
     }
 }

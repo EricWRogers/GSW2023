@@ -6,19 +6,22 @@ public class CharacterHolder : MonoBehaviour
 {
     // Start is called before the first frame update
     public Character character;
-    void Awake()
+    void Start()
     {
         //get game manager player asset and assign it to character variable here.
-        gameObject.GetComponent<Animator>().runtimeAnimatorController = character.animations;
-        gameObject.GetComponent<CharacterMovement>().speed = character.speed;
+
         if(this.name == "Player 1")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player1SelectionColor;
+            character = GameManager.Instance.Player1Selection;
+            //gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player1SelectionColor;
         }
         if (this.name == "Player 2")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player2SelectionColor;
+            character = GameManager.Instance.Player2Selection;
+            //gameObject.GetComponent<SpriteRenderer>().color = GameManager.Instance.Player2SelectionColor;
         }
+        gameObject.GetComponent<Animator>().runtimeAnimatorController = character.animations;
+        gameObject.GetComponent<CharacterMovement>().speed = character.speed;
         
     }
 
