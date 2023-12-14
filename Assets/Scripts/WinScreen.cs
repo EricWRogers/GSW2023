@@ -11,7 +11,7 @@ public class WinScreen : MonoBehaviour
 
     public void MainMenu()
     {
-        GameManager.Instance.ChangeScene("Main Menu");
+        GameManager.Instance.ChangeScene("MainMenu");
     }
 
     public void QuitGame()
